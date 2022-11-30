@@ -14,15 +14,8 @@ namespace Acknex3.Api
 
     public class Way { }
     public class Panel { }
-    public class Overlay { }
     public class Text { }
-    public class Msprite { }
+    public class Msprite { } //Synonym for Overlay only!
     public class Function { }
 
-    public class Thing : A3Object
-    { //set thing flag
-    }
-    public class Actor : Thing
-    { //set actor flag, reset thing flag
-    }
 }

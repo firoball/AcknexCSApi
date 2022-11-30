@@ -6,7 +6,7 @@ using System.Text;
 namespace Acknex3.Api
 {
 //TODO: remove class and just use C# references....
-    public class Synonym<T> : A3Object where T : A3Object
+    public class Synonym<T> : MapObject<Synonym<T>> where T : MapObject<T>
     {
         private T m_reference;
 

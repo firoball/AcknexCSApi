@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Acknex3.Api
 {
-    public class Region : A3Object
+    public class Region : MapObject<Region>
     {
         private Texture m_floor_tex;
         private Texture m_ceil_tex;

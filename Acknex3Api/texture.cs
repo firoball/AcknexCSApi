@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Acknex3.Api
 {
-    public class Texture : A3Object
+    public class Texture : MapObject<Texture> 
+    //do Textures really need cloning (MapObject)? Seems like... (attach and pos parameters...)
     {
         private Var m_sides;
         private Var m_cycles;

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Acknex3.Api
 {
-    public class Wall : A3Object
+    public class Wall : MapObject<Wall>, ILevelObject
     {
         private Texture m_texture;
         private Texture m_attach;

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Acknex3.Api
 {
-    public class Palette : A3Object
+    public class Palette : MapObject<Palette>
     {
         private string m_palfile;
         private string m_anifile;
@@ -20,6 +20,7 @@ namespace Acknex3.Api
         public int[,] Range { get => m_range; set => m_range = value; }
         public int[,,,] Anicolor { get => m_anicolor; set => m_anicolor = value; }
         public Var Cycle { get => m_cycle; set => m_cycle = value; }
+
         public int Hard { get => IsSet(A3Flags.Hard); set => m_flags = (value != 0) ? Set(A3Flags.Hard) : Reset(A3Flags.Hard); }
         public int Autorange { get => IsSet(A3Flags.Autorange); set => m_flags = (value != 0) ? Set(A3Flags.Autorange) : Reset(A3Flags.Autorange); }
         public int Blur { get => IsSet(A3Flags.Blur); set => m_flags = (value != 0) ? Set(A3Flags.Blur) : Reset(A3Flags.Blur); }

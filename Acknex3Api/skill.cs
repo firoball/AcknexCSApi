@@ -10,23 +10,31 @@ namespace Acknex3.Api
         private Var m_value;
         private Var m_max;
         private Var m_min;
-        private Skilltype m_type;
+        private SkillType m_type;
 
         public Var Value { get => m_value; set => m_value = _LIMIT(value, Min, Max); }
         public Var Max { get => m_max; set { m_max = value; m_value = _LIMIT(m_value, Min, Max); } }
         public Var Min { get => m_min; set { m_min = value; m_value = _LIMIT(m_value, Min, Max); } }
-        public Skilltype Type { get => m_type; set => m_type = value; }
+        public SkillType Type { get => m_type; set => m_type = value; }
 
         public Skill() : this(0) {}
 
-        public Skill(Var value) : this(value, -2097151, 2097151, Skilltype.Player) {}
+        public Skill(Var value) : this(value, -2097151, 2097151, SkillType.Player) {}
 
-        public Skill(Var value, Var min, Var max, Skilltype type)
+        public Skill(Var value, Var min, Var max, SkillType type)
         {
             m_min = min;
             m_max = max;
             m_value = _LIMIT(value, m_min, m_max);
             m_type = type;
+        }
+
+        public Skill(Skill skill)
+        {
+            m_min = skill.Min;
+            m_max = skill.Max;
+            m_value = skill.Value;
+            m_type = skill.Type;
         }
 
         public static Skill operator +(Skill a, Var b) { a.Value += b; return a; } //=> new Skill(a.Value + b, a.Min, a.Max, a.Type);
@@ -45,15 +53,7 @@ namespace Acknex3.Api
 
         public static implicit operator Var(Skill a) => a.Value;
 
-        private static Var _LIMIT(Var value, Var min, Var max)
-        {
-            Var v = value; 
-            if (max != 0)
-                v = (v < max) ? v : max;
-            if (min != 0)
-                v = (v > min) ? v : min;
-            return v;
-        }
+        public override string ToString() => $"{m_value}";
 
         public override bool Equals(object obj)
         {
@@ -74,9 +74,20 @@ namespace Acknex3.Api
             hashCode = hashCode * -1521134295 + m_type.GetHashCode();
             return hashCode;
         }
+
+        private static Var _LIMIT(Var value, Var min, Var max)
+        {
+            Var v = value;
+            if (max != 0)
+                v = (v < max) ? v : max;
+            if (min != 0)
+                v = (v > min) ? v : min;
+            return v;
+        }
+
     }
 
-    public enum Skilltype
+    public enum SkillType
     {
         Player = 0,
         Local = 1,

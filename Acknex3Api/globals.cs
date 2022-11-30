@@ -270,13 +270,13 @@ namespace Acknex3.Api
         public static Region Here;
         //public static Region There; //inside Function only
         //public static A3Object My; //inside Function only - identify type automatically based on thing/actor flags
-        public static A3Object Hit; //Thing, Actor, Wall -- TODO: level instances
+        public static ILevelObject Hit; //Thing, Actor, Wall -- TODO: level instances 
         public static Text Touch_text;
-        public static A3Object Touched; //Thing, Actor, Wall -- TODO: level instances
+        public static ILevelObject Touched; //Thing, Actor, Wall -- TODO: level instances 
         public static Texture Touch_tex;
         public static Region Touch_reg;
         public static string Command_line;
-        public static Msprite Mouse_sprite;
+        public static Msprite Mouse_sprite;//? -- Overlay Msprite?
 
     }
 }
