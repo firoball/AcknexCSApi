@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Acknex3.Api
 {
-    public class MapObject<T> : A3Object, IEnumerable<T> where T : MapObject<T>
+    public abstract class MapObject<T> : A3Object, IEnumerable<T> where T : MapObject<T>
     {
         private List<T> m_instances;
         private T m_parent;

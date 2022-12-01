@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Acknex3.Api
 {
-    public class Palette : MapObject<Palette>
+    public class Palette : A3Object
     {
         private string m_palfile;
         private string m_anifile;

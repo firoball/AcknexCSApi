@@ -11,9 +11,15 @@ namespace Acknex3.Api
         static Skill b;
         static void Main(string[] args)
         {
+            Bmap ba = null, bb = null, bc = null;
+            Texture tx = new Texture
+            {
+                Bmaps = new [] { ba, bb, bc }
+            };
+
             Region tex1 = new Region()
             {
-                Floor_hgt = 1
+                Floor_hgt = 1,
             };
             tex1.Instantiate();
             Region tex2 = tex1[1];
@@ -26,7 +32,7 @@ namespace Acknex3.Api
             {
                 Flags = A3Flags.Blur,
                 Palfile = "testpal.pcx",
-                Range = new[,] { { 16, 32 }, { 48, 32 }, { 80, 32 }, { 112, 32 }, { 144, 32 }, { 176, 32 }, { 208, 32 } },
+                Range = new [,] { { 16, 32 }, { 48, 32 }, { 80, 32 }, { 112, 32 }, { 144, 32 }, { 176, 32 }, { 208, 32 } },
             };
             Region tex3 = new Region()
             {
@@ -38,9 +44,9 @@ namespace Acknex3.Api
                 Debug.WriteLine(t.Floor_hgt);// +" " +t.Skill1.Value+" ");
             }
 
-            Synonym<Palette> syn = new Synonym<Palette>();
-            syn = pal1;
-            ((Palette)syn).Palfile = "x.pcx";//fixme
+            //Synonym<Palette> syn = new Synonym<Palette>();
+            //syn = pal1;
+            //((Palette)syn).Palfile = "x.pcx";//fixme
             Skill a = new Skill(12);
             Skill x = new Skill();
             Skill y = new Skill();

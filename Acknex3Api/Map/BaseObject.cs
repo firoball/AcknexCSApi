@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Acknex3.Api
 {
-    public class BaseObject<T> : MapObject<T>, ILevelObject where T : MapObject<T>
+    public abstract class BaseObject<T> : MapObject<T>, ILevelObject where T : MapObject<T>
     {
         protected Texture m_texture;
         protected Texture m_attach;

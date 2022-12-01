@@ -276,7 +276,7 @@ namespace Acknex3.Api
         public static Texture Touch_tex;
         public static Region Touch_reg;
         public static string Command_line;
-        public static Msprite Mouse_sprite;//? -- Overlay Msprite?
+        public static Overlay Msprite;
 
     }
 }

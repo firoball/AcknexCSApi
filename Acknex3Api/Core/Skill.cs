@@ -53,12 +53,11 @@ namespace Acknex3.Api
 
         public static implicit operator Var(Skill a) => a.Value;
 
-        public override string ToString() => $"{m_value}";
+        public override string ToString() => m_value.ToString();
 
         public override bool Equals(object obj)
         {
-            Skill skill = obj as Skill;
-            return skill != null &&
+            return obj is Skill skill &&
                    m_value == skill.m_value &&
                    m_max == skill.m_max &&
                    m_min == skill.m_min &&

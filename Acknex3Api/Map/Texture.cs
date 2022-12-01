@@ -15,10 +15,10 @@ namespace Acknex3.Api
         private Flic m_flic;
         private string m_title;
         private Model m_model;
-        private Var[] m_delay;
-        private Var[] m_mirror;
-        private Var[] m_offset_x;
-        private Var[] m_offset_y;
+        private int[] m_delay;
+        private int[] m_mirror;
+        private int[] m_offset_x;
+        private int[] m_offset_y;
         private Var m_random;
         private Var m_scale_x;
         private Var m_scale_y;
@@ -29,7 +29,7 @@ namespace Acknex3.Api
         private Var m_svol;
         private Var m_sdist;
         private Var m_svdist;
-        private Var[] m_scycles;
+        private int[] m_scycles;
         private Texture m_attach;
         private Var m_pos_x;
         private Var m_pos_y;
@@ -48,10 +48,10 @@ namespace Acknex3.Api
         public Flic Flic { get => m_flic; set => m_flic = value; }
         public string Title { get => m_title; set => m_title = value; }
         public Model Model { get => m_model; set => m_model = value; }
-        public Var[] Delay { get => m_delay; set => m_delay = value; }
-        public Var[] Mirror { get => m_mirror; set => m_mirror = value; }
-        public Var[] Offset_x { get => m_offset_x; set => m_offset_x = value; }
-        public Var[] Offset_y { get => m_offset_y; set => m_offset_y = value; }
+        public int[] Delay { get => m_delay; set => m_delay = value; }
+        public int[] Mirror { get => m_mirror; set => m_mirror = value; }
+        public int[] Offset_x { get => m_offset_x; set => m_offset_x = value; }
+        public int[] Offset_y { get => m_offset_y; set => m_offset_y = value; }
         public Var Random { get => m_random; set => m_random = value; }
         public Var Scale_x { get => m_scale_x; set => m_scale_x = value; } //M
         public Var Scale_y { get => m_scale_y; set => m_scale_y = value; } //M
@@ -62,7 +62,7 @@ namespace Acknex3.Api
         public Var Svol { get => m_svol; set => m_svol = value; } //M
         public Var Sdist { get => m_sdist; set => m_sdist = value; } //M
         public Var Svdist { get => m_svdist; set => m_svdist = value; } //M
-        public Var[] Scycles { get => m_scycles; set => m_scycles = value; }
+        public int[] Scycles { get => m_scycles; set => m_scycles = value; }
         public Texture Attach { get => m_attach; set => m_attach = value; } //M
         public Var Pos_x { get => m_pos_x; set => m_pos_x = value; } //M
         public Var Pos_y { get => m_pos_y; set => m_pos_y = value; } //M

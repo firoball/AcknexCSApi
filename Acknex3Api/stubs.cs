@@ -13,9 +13,6 @@ namespace Acknex3.Api
     public class Font { }
 
     public class Way { }
-    public class Panel { }
-    public class Text { }
-    public class Msprite { } //Synonym for Overlay only!
     public class Function { }
 
 }
