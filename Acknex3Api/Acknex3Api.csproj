@@ -41,19 +41,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="a3flags.cs" />
-    <Compile Include="a3object.cs" />
-    <Compile Include="globals.cs" />
-    <Compile Include="palette.cs" />
+    <Compile Include="Core\A3Flags.cs" />
+    <Compile Include="Core\A3Object.cs" />
+    <Compile Include="UI\Bar.cs" />
+    <Compile Include="UI\Button.cs" />
+    <Compile Include="UI\Digits.cs" />
+    <Compile Include="UI\HBar.cs" />
+    <Compile Include="UI\HSlider.cs" />
+    <Compile Include="Map\MapObject.cs" />
+    <Compile Include="Map\Actor.cs" />
+    <Compile Include="Map\BaseObject.cs" />
+    <Compile Include="Core\Globals.cs" />
+    <Compile Include="Map\ILevelObject.cs" />
+    <Compile Include="UI\Overlay.cs" />
+    <Compile Include="Core\Palette.cs" />
+    <Compile Include="UI\Panel.cs" />
+    <Compile Include="UI\Picture.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="region.cs" />
-    <Compile Include="skill.cs" />
+    <Compile Include="Map\Region.cs" />
+    <Compile Include="Core\Skill.cs" />
+    <Compile Include="UI\Slider.cs" />
     <Compile Include="stubs.cs" />
-    <Compile Include="synonym.cs" />
-    <Compile Include="texture.cs" />
-    <Compile Include="var.cs" />
-    <Compile Include="wall.cs" />
+    <Compile Include="Core\Synonym.cs" />
+    <Compile Include="UI\Text.cs" />
+    <Compile Include="Map\Texture.cs" />
+    <Compile Include="Map\Thing.cs" />
+    <Compile Include="UI\UIControl.cs" />
+    <Compile Include="UI\UIObject.cs" />
+    <Compile Include="Core\Var.cs" />
+    <Compile Include="UI\VBar.cs" />
+    <Compile Include="UI\View.cs" />
+    <Compile Include="UI\VSlider.cs" />
+    <Compile Include="Map\Wall.cs" />
+    <Compile Include="UI\Window.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Asset\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,6 +6,7 @@ using System.Text;
 
 namespace Acknex3.Api
 {
+
     public abstract class MapObject<T> : A3Object, IEnumerable<T> where T : MapObject<T>
     {
         private List<T> m_instances;
@@ -14,7 +15,7 @@ namespace Acknex3.Api
 
         protected Skill[] m_skill = new Skill[8];
 
-        public MapObject()
+        public MapObject() : base()
         {
             m_skill = new Skill[8];
             for (int i = 0; i < m_skill.Length; i++)
@@ -114,5 +115,7 @@ namespace Acknex3.Api
             return clone;
         }
 
+//        public static implicit operator T(MapObject<T> a) => (T)a;
     }
+
 }

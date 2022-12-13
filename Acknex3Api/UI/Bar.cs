@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Acknex3.Api
 {
-    public class Bar : UIControl
+    public abstract class Bar : UIControl
     {
         private Var m_len;
         private readonly Bmap m_bmap;

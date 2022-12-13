@@ -9,6 +9,5 @@ namespace Acknex3.Api
     {
         //TODO: add mandatory parameters for distinguishing
         //IsThing, IsActor, IsWall -> THING/ACTOR Flags
-        //implicit cast operators?
     }
 }

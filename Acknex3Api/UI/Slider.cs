@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Acknex3.Api
 {
-    public class Slider : UIControl
+    public abstract class Slider : UIControl
     {
         private Var m_len;
         private readonly Bmap m_bmap;

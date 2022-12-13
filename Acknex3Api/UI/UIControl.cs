@@ -35,7 +35,7 @@ namespace Acknex3.Api
             if (m_MonitorSkill != null)
                 m_skill = m_MonitorSkill();
             if (m_MonitorVar != null)
-                m_skill.Value = m_MonitorVar();
+                m_skill.Val = m_MonitorVar();
         }
     }
 }

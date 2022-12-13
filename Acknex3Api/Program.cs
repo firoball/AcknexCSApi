@@ -8,9 +8,20 @@ namespace Acknex3.Api
 {
     class Program
     {
+
+        static Thing w = new Thing()
+        {
+            Height = 3
+        };
         static Skill b;
         static void Main(string[] args)
         {
+            //var lobj;// = w;
+            //Thing th;
+            //Actor act;
+            //if (lobj is Thing) th = lobj;
+            //if (lobj is Actor) act = lobj;
+            
             Bmap ba = null, bb = null, bc = null;
             Texture tx = new Texture
             {
@@ -24,7 +35,7 @@ namespace Acknex3.Api
             tex1.Instantiate();
             Region tex2 = tex1[1];
             tex2.Floor_hgt = 2;
-            tex2.Skill1.Value = 23;
+            tex2.Skill1.Val = 23;
             tex2.Instantiate();
             tex2.Instantiate();
 
@@ -50,18 +61,18 @@ namespace Acknex3.Api
             Skill a = new Skill(12);
             Skill x = new Skill();
             Skill y = new Skill();
-            x.Value = 23;
-            y.Value = new Var(42);
+            x.Val = 23;
+            y.Val = new Var(42);
             Skill z = a;
-            a.Value = 66;
+            a.Val = 66;
             a += x;
 
-            Skill p = new Skill() { Value = 7, Min = -3, Max = 250};
-            p.Value = 270;
+            Skill p = new Skill() { Val = 7, Min = -3, Max = 250};
+            p.Val = 270;
             DoStuff(ref p);
-            p.Value = a;
+            p.Val = a;
             x++;
-            x.Value++;
+            x.Val++;
 
             RegisterMethod(() => { return x+10; });
             result();
@@ -77,7 +88,7 @@ namespace Acknex3.Api
         static void DoStuff(ref Skill s)
         {
             Debug.WriteLine(s);
-            s.Value = 3;
+            s.Val = 3;
             b = s;
             b *= 4;
         }
