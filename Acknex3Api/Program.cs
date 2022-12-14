@@ -8,6 +8,47 @@ namespace Acknex3.Api
 {
     class Program
     {
+        public static IEnumerable<int> Integers()
+        {
+            yield return 1;
+            yield return 2;
+            yield return 4;
+            yield return 8;
+            yield return 16;
+            yield return 16777216;
+        }
+
+        public static void Exec(IEnumerable<IEnumerable<bool>> func)
+        {
+            foreach (IEnumerable<bool> ie in func)
+            {
+                foreach (bool b in ie)
+                {
+                    Debug.WriteLine(b.ToString());
+                }
+            }
+
+        }
+
+        public static IEnumerable<bool> Wait(long ms)
+        {
+            long start = DateTime.Now.Ticks;
+            while (DateTime.Now.Ticks - start < 10000 * ms)
+            {
+                Debug.WriteLine((double)(DateTime.Now.Ticks - start) / 10000.0 + "ms");
+                yield return false;
+            }
+            yield return true;
+        }
+
+        public static IEnumerable<IEnumerable<bool>> MyFunc()
+        {
+            Debug.WriteLine("Started");
+           yield return Wait(1000);
+            Debug.WriteLine("Done");
+            yield break;
+            //TimeSpan ts = new TimeSpan(10000);
+        }
 
         static Thing w = new Thing()
         {
@@ -16,12 +57,25 @@ namespace Acknex3.Api
         static Skill b;
         static void Main(string[] args)
         {
+            Exec(MyFunc());
+            //bool ok = false;
+            //do
+            //{
+                //ok = MyFunc().Current;
+                //foreach (bool ok in MyFunc())
+                    //Debug.WriteLine(ok.ToString());
+                //MyFunc().MoveNext();
+            //} while (!ok);
+
+            
+            foreach (int yi in Integers())
+                Debug.WriteLine(yi.ToString());
             //var lobj;// = w;
             //Thing th;
             //Actor act;
             //if (lobj is Thing) th = lobj;
             //if (lobj is Actor) act = lobj;
-            
+
             Bmap ba = null, bb = null, bc = null;
             Texture tx = new Texture
             {

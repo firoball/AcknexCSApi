@@ -41,8 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Asset\Asset.cs" />
+    <Compile Include="Asset\Bitmap.cs" />
+    <Compile Include="Asset\Bmap.cs" />
+    <Compile Include="Asset\Flic.cs" />
+    <Compile Include="Asset\Font.cs" />
+    <Compile Include="Asset\Model.cs" />
+    <Compile Include="Asset\Music.cs" />
+    <Compile Include="Asset\Ovly.cs" />
+    <Compile Include="Asset\Sound.cs" />
     <Compile Include="Core\A3Flags.cs" />
     <Compile Include="Core\A3Object.cs" />
+    <Compile Include="Test\Test.cs" />
     <Compile Include="UI\Bar.cs" />
     <Compile Include="UI\Button.cs" />
     <Compile Include="UI\Digits.cs" />
@@ -76,8 +86,6 @@
     <Compile Include="Map\Wall.cs" />
     <Compile Include="UI\Window.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Asset\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

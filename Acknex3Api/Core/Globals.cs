@@ -256,6 +256,18 @@ namespace Acknex3.Api
         public static Skill Wave = new Skill();
         public static Skill Wave_period = new Skill();
 
+        /* Global Settings*/
+        public static string Video;
+        public static Var Nexus;
+        public static Var Clip_dist;
+        public static Var Light_angle;
+        public static string Ibank;
+        public static string Drumbank;
+        public static Var Midi_pitch;
+        public static string Mapfile;
+        public static string Savedir;
+        public static string Starttext;
+
         /* Events */
 
 
