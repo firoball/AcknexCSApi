@@ -5,8 +5,8 @@ using System.Text;
 
 namespace Acknex3.Api
 {
-    public class VSlider : Slider
+    public class Vslider : Slider
     {
-        public VSlider(Var x, Var y, Var len, Bmap bmap, Func<Skill> skill) : base(x, y, len, bmap, skill) { }
+        public Vslider(Var x, Var y, Var len, Bmap bmap, Func<Skill> skill) : base(x, y, len, bmap, skill) { }
     }
 }

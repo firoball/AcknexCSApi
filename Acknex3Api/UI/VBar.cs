@@ -5,8 +5,8 @@ using System.Text;
 
 namespace Acknex3.Api
 {
-    public class VBar : Bar
+    public class Vbar : Bar
     {
-        public VBar(Var x, Var y, Var len, Bmap bmap, Var fac, Func<Var> var) : base(x, y, len, bmap, fac, var) { }
+        public Vbar(Var x, Var y, Var len, Bmap bmap, Var fac, Func<Var> var) : base(x, y, len, bmap, fac, var) { }
     }
 }

@@ -267,6 +267,7 @@ namespace Acknex3.Api
         public static string Mapfile;
         public static string Savedir;
         public static string Starttext;
+        public static Var Dither;
 
         /* Events */
 

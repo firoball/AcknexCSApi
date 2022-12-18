@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+//using System.Linq;
 using System.Text;
 using System.Diagnostics;
 
@@ -8,26 +8,28 @@ namespace Acknex3.Api
 {
     class Program
     {
-        public static IEnumerable<int> Integers()
-        {
-            yield return 1;
-            yield return 2;
-            yield return 4;
-            yield return 8;
-            yield return 16;
-            yield return 16777216;
-        }
-
         public static void Exec(IEnumerable<IEnumerable<bool>> func)
         {
+            
+            IEnumerator<IEnumerable<bool>> ie = func.GetEnumerator();
+            while (ie.MoveNext())
+            {
+                IEnumerator<bool> e = ie.Current.GetEnumerator();
+                while (e.MoveNext())
+                {
+                    Debug.WriteLine(e.Current.ToString());
+                } 
+            } 
+            
+            /*
             foreach (IEnumerable<bool> ie in func)
             {
                 foreach (bool b in ie)
                 {
                     Debug.WriteLine(b.ToString());
                 }
-            }
-
+            }*/
+            
         }
 
         public static IEnumerable<bool> Wait(long ms)
@@ -44,7 +46,7 @@ namespace Acknex3.Api
         public static IEnumerable<IEnumerable<bool>> MyFunc()
         {
             Debug.WriteLine("Started");
-           yield return Wait(1000);
+            yield return Wait(1000);
             Debug.WriteLine("Done");
             yield break;
             //TimeSpan ts = new TimeSpan(10000);
@@ -68,14 +70,6 @@ namespace Acknex3.Api
             //} while (!ok);
 
             
-            foreach (int yi in Integers())
-                Debug.WriteLine(yi.ToString());
-            //var lobj;// = w;
-            //Thing th;
-            //Actor act;
-            //if (lobj is Thing) th = lobj;
-            //if (lobj is Actor) act = lobj;
-
             Bmap ba = null, bb = null, bc = null;
             Texture tx = new Texture
             {
