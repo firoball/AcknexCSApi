@@ -59,6 +59,9 @@ namespace Acknex3.Api
         public Function Each_cycle { get => m_each_cycle; set => m_each_cycle = value; } //M
         public Function Each_tick { get => m_each_tick; set => m_each_tick = value; } //M
 
+        public Var X { get => m_x1; set => m_x1 = value; } //implement ILevelObject
+        public Var Y { get => m_y1; set => m_y1 = value; } //implement ILevelObject
+
         public int Invisible { get => IsSet(A3Flags.Invisible); set => m_flags = (value != 0) ? Set(A3Flags.Invisible) : Reset(A3Flags.Invisible); } //M
         public int Passable { get => IsSet(A3Flags.Passable); set => m_flags = (value != 0) ? Set(A3Flags.Passable) : Reset(A3Flags.Passable); } //M
         public int Immaterial { get => IsSet(A3Flags.Immaterial); set => m_flags = (value != 0) ? Set(A3Flags.Immaterial) : Reset(A3Flags.Immaterial); } //M
@@ -75,5 +78,30 @@ namespace Acknex3.Api
         public int Fragile { get => IsSet(A3Flags.Fragile); set => m_flags = (value != 0) ? Set(A3Flags.Fragile) : Reset(A3Flags.Fragile); } //M
         public int Far { get => IsSet(A3Flags.Far); set => m_flags = (value != 0) ? Set(A3Flags.Far) : Reset(A3Flags.Far); }
         public int Save { get => IsSet(A3Flags.Save); set => m_flags = (value != 0) ? Set(A3Flags.Save) : Reset(A3Flags.Save); }
+
+        public void Locate()
+        {
+
+        }
+
+        public void Drop()
+        {
+
+        }
+
+        public void Place()
+        {
+
+        }
+
+        public void Explode()
+        {
+
+        }
+
+        public void Shake()
+        {
+
+        }
     }
 }

@@ -67,6 +67,31 @@ namespace Acknex3.Api
         public int Flat { get => IsSet(A3Flags.Flat); set => m_flags = (value != 0) ? Set(A3Flags.Flat) : Reset(A3Flags.Flat); } //M
         public int Fragile { get => IsSet(A3Flags.Fragile); set => m_flags = (value != 0) ? Set(A3Flags.Fragile) : Reset(A3Flags.Fragile); } //M
         public int Save { get => IsSet(A3Flags.Save); set => m_flags = (value != 0) ? Set(A3Flags.Save) : Reset(A3Flags.Save); } //M
+
+        public void Locate()
+        {
+
+        }
+
+        public void Drop()
+        {
+
+        }
+
+        public void Place()
+        {
+
+        }
+
+        public void Explode()
+        {
+
+        }
+
+        public void Shake()
+        {
+
+        }
     }
 
 }

@@ -99,6 +99,11 @@ namespace Acknex3.Api
             }
         }
 
+        public void Get (out T obj)
+        {
+            obj = (T)this;
+        }
+
         private T Clone(T template)
         {
             T clone = (T)template.MemberwiseClone();

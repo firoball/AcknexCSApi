@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 //using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace Acknex3.Api
 {
     class Program
     {
+
         public static void Exec(IEnumerable<IEnumerable<bool>> func)
         {
             
@@ -31,6 +33,33 @@ namespace Acknex3.Api
             }*/
             
         }
+    
+
+        public static void Exec2(IEnumerator func)
+        {
+
+            while (func.MoveNext())
+            {
+                IEnumerator e = (IEnumerator)func.Current;
+                while (e.MoveNext())
+                {
+                    Debug.WriteLine(e.Current.ToString());
+                }
+            }
+
+        }
+
+        public static IEnumerator Waitt(long ms)
+        {
+            long start = DateTime.Now.Ticks;
+            while (DateTime.Now.Ticks - start < 10000 * ms)
+            {
+                Debug.WriteLine((double)(DateTime.Now.Ticks - start) / 10000.0 + "ms");
+                yield return false;
+            }
+            yield return true;
+        }
+
 
         public static IEnumerable<bool> Wait(long ms)
         {
@@ -43,10 +72,18 @@ namespace Acknex3.Api
             yield return true;
         }
 
+        public static IEnumerator MyFunc2()
+        {
+            Debug.WriteLine("Started");
+            yield return Waitt(100);
+            Debug.WriteLine("Done");
+            yield break;
+        }
+
         public static IEnumerable<IEnumerable<bool>> MyFunc()
         {
             Debug.WriteLine("Started");
-            yield return Wait(1000);
+            yield return Wait(100);
             Debug.WriteLine("Done");
             yield break;
             //TimeSpan ts = new TimeSpan(10000);
@@ -60,16 +97,17 @@ namespace Acknex3.Api
         static void Main(string[] args)
         {
             Exec(MyFunc());
+            Exec2(MyFunc2());
             //bool ok = false;
             //do
             //{
-                //ok = MyFunc().Current;
-                //foreach (bool ok in MyFunc())
-                    //Debug.WriteLine(ok.ToString());
-                //MyFunc().MoveNext();
+            //ok = MyFunc().Current;
+            //foreach (bool ok in MyFunc())
+            //Debug.WriteLine(ok.ToString());
+            //MyFunc().MoveNext();
             //} while (!ok);
 
-            
+
             Bmap ba = null, bb = null, bc = null;
             Texture tx = new Texture
             {
@@ -103,9 +141,6 @@ namespace Acknex3.Api
                 Debug.WriteLine(t.Floor_hgt);// +" " +t.Skill1.Value+" ");
             }
 
-            //Synonym<Palette> syn = new Synonym<Palette>();
-            //syn = pal1;
-            //((Palette)syn).Palfile = "x.pcx";//fixme
             Skill a = new Skill(12);
             Skill x = new Skill();
             Skill y = new Skill();
@@ -140,5 +175,7 @@ namespace Acknex3.Api
             b = s;
             b *= 4;
         }
+
     }
 }
+

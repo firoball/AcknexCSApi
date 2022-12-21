@@ -52,12 +52,13 @@
     <Compile Include="Asset\Sound.cs" />
     <Compile Include="Core\A3Flags.cs" />
     <Compile Include="Core\A3Object.cs" />
+    <Compile Include="Core\Commands.cs" />
     <Compile Include="Test\Test.cs" />
     <Compile Include="UI\Bar.cs" />
     <Compile Include="UI\Button.cs" />
     <Compile Include="UI\Digits.cs" />
-    <Compile Include="UI\HBar.cs" />
-    <Compile Include="UI\HSlider.cs" />
+    <Compile Include="UI\Hbar.cs" />
+    <Compile Include="UI\Hslider.cs" />
     <Compile Include="Map\MapObject.cs" />
     <Compile Include="Map\Actor.cs" />
     <Compile Include="Map\BaseObject.cs" />
@@ -73,16 +74,15 @@
     <Compile Include="Core\Skill.cs" />
     <Compile Include="UI\Slider.cs" />
     <Compile Include="stubs.cs" />
-    <Compile Include="Core\Synonym.cs" />
     <Compile Include="UI\Text.cs" />
     <Compile Include="Map\Texture.cs" />
     <Compile Include="Map\Thing.cs" />
     <Compile Include="UI\UIControl.cs" />
     <Compile Include="UI\UIObject.cs" />
     <Compile Include="Core\Var.cs" />
-    <Compile Include="UI\VBar.cs" />
+    <Compile Include="UI\Vbar.cs" />
     <Compile Include="UI\View.cs" />
-    <Compile Include="UI\VSlider.cs" />
+    <Compile Include="UI\Vslider.cs" />
     <Compile Include="Map\Wall.cs" />
     <Compile Include="UI\Window.cs" />
   </ItemGroup>

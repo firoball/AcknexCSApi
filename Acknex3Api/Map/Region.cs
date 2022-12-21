@@ -69,6 +69,26 @@ namespace Acknex3.Api
         public int Sticky { get => IsSet(A3Flags.Sticky); set => m_flags = (value != 0) ? Set(A3Flags.Sticky) : Reset(A3Flags.Sticky); }
         public int Play { get => IsSet(A3Flags.Play); set => m_flags = (value != 0) ? Set(A3Flags.Play) : Reset(A3Flags.Play); } //M
 
+        public void Lift(Var dz)
+        {
+
+        }
+
+        public void Tilt(Var multiplier)
+        {
+
+        }
+
+        public void Shift(Var dx, Var dy)
+        {
+
+        }
+
+        public void Rotate(Var radians)
+        {
+
+        }
+
     }
 
 }

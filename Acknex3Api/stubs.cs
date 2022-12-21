@@ -16,6 +16,7 @@ namespace Acknex3.Api
 
 
     public class Way { }
+
     public class Function : IEnumerable<bool>
     {
         IEnumerator<bool> IEnumerable<bool>.GetEnumerator()
@@ -28,5 +29,5 @@ namespace Acknex3.Api
             throw new NotImplementedException();
         }
     }
-
+    
 }
