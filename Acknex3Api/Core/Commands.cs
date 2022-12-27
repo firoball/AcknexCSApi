@@ -33,53 +33,58 @@ namespace Acknex3.Api
         //Set_skill (new39)
         //To_string (new39)
 
+/* Implemented by Skill
         public static Skill Accel(Skill skill1, Skill skill2)
         {
             return new Skill();
         }
-
+*/
         public static Var Randomize(Var value)
         {
             return value;
         }
 
-        //Todo: IENumerable
+        //Todo: IENumerator - Scheduler class
         public static void Wait(Var value)
         {
 
         }
 
-        //Todo: IENumerable
+        //Todo: IENumerator - Scheduler class
         public static void Waitt(Var value)
         {
 
         }
-
+        //Todo: Media class
         public static void Play_sound(Sound sound, Var volume)
         {
 
         }
 
+        //Todo: Media class
         public static void Play_sound(Sound sound, Var volume, Var balance)
         {
 
         }
 
+/* Implemented by BaseObject, Wall
         public static void Play_sound(Sound sound, Var volume, ILevelObject obj)
         {
 
         }
-
+*/
+        //Todo: Media class
         public static void Play_sound(string file, Var volume, Var balance)
         {
 
         }
 
+/* Implemented by BaseObject, Wall
         public static void Play_sound(string file, Var volume, ILevelObject obj)
         {
 
         }
-
+*/
         public static void Stop_sound()
         {
 

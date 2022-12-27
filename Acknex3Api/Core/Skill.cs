@@ -85,6 +85,10 @@ namespace Acknex3.Api
             return v;
         }
 
+        public void Accel(Skill skill)
+        {
+            //TODO: add acceleration formula: from A4 manual?
+        }
     }
 
     public enum SkillType

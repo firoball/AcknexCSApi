@@ -12,7 +12,7 @@ namespace Acknex3.Api
 
         public static void Exec(IEnumerable<IEnumerable<bool>> func)
         {
-            
+
             IEnumerator<IEnumerable<bool>> ie = func.GetEnumerator();
             while (ie.MoveNext())
             {
@@ -20,9 +20,9 @@ namespace Acknex3.Api
                 while (e.MoveNext())
                 {
                     Debug.WriteLine(e.Current.ToString());
-                } 
-            } 
-            
+                }
+            }
+
             /*
             foreach (IEnumerable<bool> ie in func)
             {
@@ -31,9 +31,9 @@ namespace Acknex3.Api
                     Debug.WriteLine(b.ToString());
                 }
             }*/
-            
+
         }
-    
+
 
         public static void Exec2(IEnumerator func)
         {
@@ -107,11 +107,14 @@ namespace Acknex3.Api
             //MyFunc().MoveNext();
             //} while (!ok);
 
-
+#if bla
             Bmap ba = null, bb = null, bc = null;
+#else
+            Bmap ba = null, bb = null, bc = null;
+#endif
             Texture tx = new Texture
             {
-                Bmaps = new [] { ba, bb, bc }
+                Bmaps = new[] { ba, bb, bc }
             };
 
             Region tex1 = new Region()
@@ -124,23 +127,25 @@ namespace Acknex3.Api
             tex2.Skill1.Val = 23;
             tex2.Instantiate();
             tex2.Instantiate();
-
+            goto bla;
+            bla:
             Palette pal1 = new Palette()
             {
                 Flags = A3Flags.Blur,
                 Palfile = "testpal.pcx",
-                Range = new [,] { { 16, 32 }, { 48, 32 }, { 80, 32 }, { 112, 32 }, { 144, 32 }, { 176, 32 }, { 208, 32 } },
+                Range = new[,] { { 16, 32 }, { 48, 32 }, { 80, 32 }, { 112, 32 }, { 144, 32 }, { 176, 32 }, { 208, 32 } },
             };
             Region tex3 = new Region()
             {
                 Floor_hgt = 3
             };
             Region tex4 = tex2[0];
-            foreach(Region t in tex1)
+            foreach (Region t in tex1)
             {
                 Debug.WriteLine(t.Floor_hgt);// +" " +t.Skill1.Value+" ");
             }
 
+            foreach (var rg in tex2) rg.Ambient = 10;
             Skill a = new Skill(12);
             Skill x = new Skill();
             Skill y = new Skill();
@@ -150,14 +155,14 @@ namespace Acknex3.Api
             a.Val = 66;
             a += x;
 
-            Skill p = new Skill() { Val = 7, Min = -3, Max = 250};
+            Skill p = new Skill() { Val = 7, Min = -3, Max = 250 };
             p.Val = 270;
             DoStuff(ref p);
             p.Val = a;
             x++;
             x.Val++;
 
-            RegisterMethod(() => { return x+10; });
+            RegisterMethod(() => { return x + 10; });
             result();
         }
 

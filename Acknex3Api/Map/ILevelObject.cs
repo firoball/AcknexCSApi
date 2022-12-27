@@ -15,7 +15,7 @@ namespace Acknex3.Api
         void Place();
         void Explode();
         void Shake();
-        
+        void Play_sound(Sound sound, Var volume);
         //TODO: add mandatory parameters for distinguishing
         //IsThing, IsActor, IsWall -> THING/ACTOR Flags
     }

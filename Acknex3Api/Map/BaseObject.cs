@@ -92,6 +92,12 @@ namespace Acknex3.Api
         {
 
         }
+
+        public void Play_sound(Sound sound, Var volume)
+        {
+
+        }
+
     }
 
 }
