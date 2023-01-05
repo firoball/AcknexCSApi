@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 
@@ -22,12 +22,13 @@ namespace Acknex3.Api
         protected Var m_result; //R
         protected Var m_x;
         protected Var m_y;
+        protected Var m_z;
         protected Region m_region; //M
-        protected Function m_if_near; //M
-        protected Function m_if_far; //M
-        protected Function m_if_hit; //M
-        protected Function m_each_cycle; //M
-        protected Function m_each_tick; //M
+        protected Func<IEnumerator> m_if_near; //M
+        protected Func<IEnumerator> m_if_far; //M
+        protected Func<IEnumerator> m_if_hit; //M
+        protected Func<IEnumerator> m_each_cycle; //M
+        protected Func<IEnumerator> m_each_tick; //M
 
         public BaseObject() : base() { }
 
@@ -46,12 +47,13 @@ namespace Acknex3.Api
         public Var Result { get => m_result; set => m_result = value; }
         public Var X { get => m_x; set => m_x = value; }
         public Var Y { get => m_y; set => m_y = value; }
+        public Var Z { get => m_z; set => m_z = value; }
         public Region Region { get => m_region; set => m_region = value; }
-        public Function If_near { get => m_if_near; set => m_if_near = value; }
-        public Function If_far { get => m_if_far; set => m_if_far = value; }
-        public Function If_hit { get => m_if_hit; set => m_if_hit = value; }
-        public Function Each_cycle { get => m_each_cycle; set => m_each_cycle = value; }
-        public Function Each_tick { get => m_each_tick; set => m_each_tick = value; }
+        public Func<IEnumerator> If_near { get => m_if_near; set => m_if_near = value; }
+        public Func<IEnumerator> If_far { get => m_if_far; set => m_if_far = value; }
+        public Func<IEnumerator> If_hit { get => m_if_hit; set => m_if_hit = value; }
+        public Func<IEnumerator> Each_cycle { get => m_each_cycle; set => m_each_cycle = value; }
+        public Func<IEnumerator> Each_tick { get => m_each_tick; set => m_each_tick = value; }
 
         public int Invisible { get => IsSet(A3Flags.Invisible); set => m_flags = (value != 0) ? Set(A3Flags.Invisible) : Reset(A3Flags.Invisible); } //M
         public int Passable { get => IsSet(A3Flags.Passable); set => m_flags = (value != 0) ? Set(A3Flags.Passable) : Reset(A3Flags.Passable); } //M
@@ -98,6 +100,26 @@ namespace Acknex3.Api
 
         }
 
+        public void Shoot()
+        {
+            //am I shot?
+        }
+
+        public new ILevelObject Next()
+        {
+            return (ILevelObject)base.Next();
+        }
+
+        public ILevelObject Next_there()
+        {
+            //TODO: this is for objects of same name only. NEeds to be implemented for objects of ANY name (new global lookup list required)
+            BaseObject<T> obj = null;
+            do
+            {
+                obj = base.Next() as BaseObject<T>;
+            } while (obj.Region != Region);
+            return obj;
+        }
     }
 
 }

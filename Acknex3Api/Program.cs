@@ -1,4 +1,5 @@
-﻿using System;
+﻿#define NEXT
+using System;
 using System.Collections;
 using System.Collections.Generic;
 //using System.Linq;
@@ -9,9 +10,9 @@ namespace Acknex3.Api
 {
     class Program
     {
-
         public static void Exec(IEnumerable<IEnumerable<bool>> func)
         {
+#if NEXT
 
             IEnumerator<IEnumerable<bool>> ie = func.GetEnumerator();
             while (ie.MoveNext())
@@ -22,16 +23,16 @@ namespace Acknex3.Api
                     Debug.WriteLine(e.Current.ToString());
                 }
             }
-
-            /*
+#else
+            
             foreach (IEnumerable<bool> ie in func)
             {
                 foreach (bool b in ie)
                 {
                     Debug.WriteLine(b.ToString());
                 }
-            }*/
-
+            }
+#endif
         }
 
 

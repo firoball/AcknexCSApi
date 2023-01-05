@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 
@@ -35,9 +35,9 @@ namespace Acknex3.Api
         private Var m_pos_y;
         private string m_touch;
         private Font m_font;
-        private Function m_if_touch;
-        private Function m_if_release;
-        private Function m_if_klick;
+        private Func<IEnumerator> m_if_touch;
+        private Func<IEnumerator> m_if_release;
+        private Func<IEnumerator> m_if_klick;
 
         public Texture() : base() {}
 
@@ -68,9 +68,9 @@ namespace Acknex3.Api
         public Var Pos_y { get => m_pos_y; set => m_pos_y = value; } //M
         public string Touch { get => m_touch; set => m_touch = value; } //M
         public Font Font { get => m_font; set => m_font = value; }
-        public Function If_touch { get => m_if_touch; set => m_if_touch = value; } //M
-        public Function If_release { get => m_if_release; set => m_if_release = value; } //M
-        public Function If_klick { get => m_if_klick; set => m_if_klick = value; } //M
+        public Func<IEnumerator> If_touch { get => m_if_touch; set => m_if_touch = value; } //M
+        public Func<IEnumerator> If_release { get => m_if_release; set => m_if_release = value; } //M
+        public Func<IEnumerator> If_klick { get => m_if_klick; set => m_if_klick = value; } //M
 
         public int Oneshot { get => IsSet(A3Flags.Oneshot); set => m_flags = (value != 0) ? Set(A3Flags.Oneshot) : Reset(A3Flags.Oneshot); }
         public int Ghost { get => IsSet(A3Flags.Ghost); set => m_flags = (value != 0) ? Set(A3Flags.Ghost) : Reset(A3Flags.Ghost); }

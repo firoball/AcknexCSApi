@@ -104,6 +104,15 @@ namespace Acknex3.Api
             obj = (T)this;
         }
 
+        public T Next()
+        {
+            int nextIndex = m_instances.FindIndex(x => x == this) + 1;
+            if (nextIndex < m_instances.Count)
+                return m_instances[nextIndex];
+            else
+                return m_instances[0];
+        }
+
         private T Clone(T template)
         {
             T clone = (T)template.MemberwiseClone();
@@ -120,7 +129,12 @@ namespace Acknex3.Api
             return clone;
         }
 
-//        public static implicit operator T(MapObject<T> a) => (T)a;
+        //        public static implicit operator T(MapObject<T> a) => (T)a;
+
+        public void Exclusive()
+        {
+
+        }
     }
 
 }

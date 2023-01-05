@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 
@@ -26,11 +26,11 @@ namespace Acknex3.Api
         private Var m_z2;
         private Region m_left;
         private Region m_right;
-        private Function m_if_near;
-        private Function m_if_far;
-        private Function m_if_hit;
-        private Function m_each_cycle;
-        private Function m_each_tick;
+        private Func<IEnumerator> m_if_near;
+        private Func<IEnumerator> m_if_far;
+        private Func<IEnumerator> m_if_hit;
+        private Func<IEnumerator> m_each_cycle;
+        private Func<IEnumerator> m_each_tick;
 
         public Wall() : base() { }
 
@@ -53,11 +53,11 @@ namespace Acknex3.Api
         public Var Z2 { get => m_z2; set => m_z2 = value; } //M
         public Region Left { get => m_left; set => m_left = value; } //R
         public Region Right { get => m_right; set => m_right = value; } //R
-        public Function If_near { get => m_if_near; set => m_if_near = value; } //M
-        public Function If_far { get => m_if_far; set => m_if_far = value; } //M
-        public Function If_hit { get => m_if_hit; set => m_if_hit = value; } //M
-        public Function Each_cycle { get => m_each_cycle; set => m_each_cycle = value; } //M
-        public Function Each_tick { get => m_each_tick; set => m_each_tick = value; } //M
+        public Func<IEnumerator> If_near { get => m_if_near; set => m_if_near = value; } //M
+        public Func<IEnumerator> If_far { get => m_if_far; set => m_if_far = value; } //M
+        public Func<IEnumerator> If_hit { get => m_if_hit; set => m_if_hit = value; } //M
+        public Func<IEnumerator> Each_cycle { get => m_each_cycle; set => m_each_cycle = value; } //M
+        public Func<IEnumerator> Each_tick { get => m_each_tick; set => m_each_tick = value; } //M
 
         public Var X { get => m_x1; set => m_x1 = value; } //implement ILevelObject
         public Var Y { get => m_y1; set => m_y1 = value; } //implement ILevelObject
@@ -107,6 +107,21 @@ namespace Acknex3.Api
         public void Play_sound(Sound sound, Var volume)
         {
 
+        }
+
+        public void Shoot()
+        {
+            //am I shot?
+        }
+
+        public new ILevelObject Next()
+        {
+            return base.Next();
+        }
+
+        public ILevelObject Next_there()
+        {
+            return this;
         }
     }
 }

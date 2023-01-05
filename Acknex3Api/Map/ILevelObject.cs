@@ -16,6 +16,10 @@ namespace Acknex3.Api
         void Explode();
         void Shake();
         void Play_sound(Sound sound, Var volume);
+        void Shoot();
+        void Exclusive();
+        ILevelObject Next();
+        ILevelObject Next_there();
         //TODO: add mandatory parameters for distinguishing
         //IsThing, IsActor, IsWall -> THING/ACTOR Flags
     }
