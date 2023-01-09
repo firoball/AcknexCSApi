@@ -10,6 +10,8 @@ namespace Acknex3.Api
 {
     class Program
     {
+
+
         public static void Exec(IEnumerable<IEnumerable<bool>> func)
         {
 #if NEXT
@@ -90,11 +92,10 @@ namespace Acknex3.Api
             //TimeSpan ts = new TimeSpan(10000);
         }
 
-        static Thing w = new Thing()
-        {
-            Height = 3
-        };
+
         static Skill b;
+
+
         static void Main(string[] args)
         {
             Exec(MyFunc());
@@ -128,6 +129,7 @@ namespace Acknex3.Api
             tex2.Skill1.Val = 23;
             tex2.Instantiate();
             tex2.Instantiate();
+
             goto bla;
             bla:
             Palette pal1 = new Palette()

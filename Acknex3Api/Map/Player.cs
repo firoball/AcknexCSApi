@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Acknex3.Api.Map
+namespace Acknex3.Api
 {
-    public class Player : BaseObject<Player>
+    public class Player : BaseObject
     {
         private static Player s_player = null;
 

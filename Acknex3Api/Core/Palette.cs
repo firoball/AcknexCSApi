@@ -21,9 +21,9 @@ namespace Acknex3.Api
         public int[,,,] Anicolor { get => m_anicolor; set => m_anicolor = value; }
         public Var Cycle { get => m_cycle; set => m_cycle = value; }
 
-        public int Hard { get => IsSet(A3Flags.Hard); set => m_flags = (value != 0) ? Set(A3Flags.Hard) : Reset(A3Flags.Hard); }
-        public int Autorange { get => IsSet(A3Flags.Autorange); set => m_flags = (value != 0) ? Set(A3Flags.Autorange) : Reset(A3Flags.Autorange); }
-        public int Blur { get => IsSet(A3Flags.Blur); set => m_flags = (value != 0) ? Set(A3Flags.Blur) : Reset(A3Flags.Blur); }
+        public int? Hard { get => IsSet(A3Flags.Hard); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Hard) : Reset(A3Flags.Hard); }
+        public int? Autorange { get => IsSet(A3Flags.Autorange); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Autorange) : Reset(A3Flags.Autorange); }
+        public int? Blur { get => IsSet(A3Flags.Blur); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Blur) : Reset(A3Flags.Blur); }
 
         public void Fade(Var factor)
         {

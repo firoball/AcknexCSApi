@@ -26,10 +26,10 @@ namespace Acknex3.Api
         public string String { get => m_string_array[m_index-1]; set => m_string_array[m_index - 1] = value; }
         public Var Index { get => m_index; set => m_index = value; }
 
-        public int Center_x { get => IsSet(A3Flags.Center_x); set => m_flags = (value != 0) ? Set(A3Flags.Center_x) : Reset(A3Flags.Center_x); }
-        public int Center_y { get => IsSet(A3Flags.Center_y); set => m_flags = (value != 0) ? Set(A3Flags.Center_y) : Reset(A3Flags.Center_y); }
-        public int Condensed { get => IsSet(A3Flags.Condensed); set => m_flags = (value != 0) ? Set(A3Flags.Condensed) : Reset(A3Flags.Condensed); }
-        public int Narrow { get => IsSet(A3Flags.Narrow); set => m_flags = (value != 0) ? Set(A3Flags.Narrow) : Reset(A3Flags.Narrow); }
+        public int? Center_x { get => IsSet(A3Flags.Center_x); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Center_x) : Reset(A3Flags.Center_x); }
+        public int? Center_y { get => IsSet(A3Flags.Center_y); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Center_y) : Reset(A3Flags.Center_y); }
+        public int? Condensed { get => IsSet(A3Flags.Condensed); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Condensed) : Reset(A3Flags.Condensed); }
+        public int? Narrow { get => IsSet(A3Flags.Narrow); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Narrow) : Reset(A3Flags.Narrow); }
 
         public Var Find(string str)
         {

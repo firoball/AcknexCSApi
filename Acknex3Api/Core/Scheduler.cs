@@ -8,12 +8,18 @@ namespace Acknex3.Api
     public static class Scheduler
     {
 
-        //TODO: set global inkey_str and assign it in instruction since out parameter is not allowed
-        public static IEnumerator Inkey(string text)
+        private static string s_inkey_string;
+
+        public static string Inkey_string { get => s_inkey_string; set => s_inkey_string = value; }
+
+        public static IEnumerator Inkey(string input)
         {
+            s_inkey_string = input;
+            //TODO: set Inkey_string;
             yield break;
         }
 
+/*
         public static IEnumerator Wait(Var value)
         {
             yield break;
@@ -23,8 +29,8 @@ namespace Acknex3.Api
         {
             yield break;
         }
-
-        public static void Run(Func<IEnumerator> function)
+        */
+        public static void Run(Function function)
         {
 
         }

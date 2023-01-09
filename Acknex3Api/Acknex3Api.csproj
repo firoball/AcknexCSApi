@@ -53,6 +53,15 @@
     <Compile Include="Core\A3Flags.cs" />
     <Compile Include="Core\A3Object.cs" />
     <Compile Include="Core\Commands.cs" />
+    <Compile Include="Core\Diag.cs" />
+    <Compile Include="Core\Environment.cs" />
+    <Compile Include="Core\Events.cs" />
+    <Compile Include="Core\Function.cs" />
+    <Compile Include="Core\MathV.cs" />
+    <Compile Include="Core\Media.cs" />
+    <Compile Include="Core\Scheduler.cs" />
+    <Compile Include="Core\Skills.cs" />
+    <Compile Include="Map\Player.cs" />
     <Compile Include="Test\Test.cs" />
     <Compile Include="UI\Bar.cs" />
     <Compile Include="UI\Button.cs" />
@@ -63,7 +72,6 @@
     <Compile Include="Map\Actor.cs" />
     <Compile Include="Map\BaseObject.cs" />
     <Compile Include="Core\Globals.cs" />
-    <Compile Include="Map\ILevelObject.cs" />
     <Compile Include="UI\Overlay.cs" />
     <Compile Include="Core\Palette.cs" />
     <Compile Include="UI\Panel.cs" />

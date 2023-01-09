@@ -53,7 +53,7 @@ namespace Acknex3.Api
         public static Skill operator -(Skill a) { a.Val *= -1; return a; }
 
         public static implicit operator Var(Skill a) => a.Val;
-        public static implicit operator Skill(double a) => new Skill(a);
+        //public static implicit operator Skill(double a) => new Skill(a);
 
         public override string ToString() => m_val.ToString();
 
@@ -91,9 +91,8 @@ namespace Acknex3.Api
             //TODO: add acceleration formula: from A4 manual?
         }
 
-        public void Randomize(Skill skill)
+        public void Randomize(Var value)
         {
-            //TODO: implement also for Var? Min/Max required to be supported?
         }
     }
 

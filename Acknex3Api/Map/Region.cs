@@ -22,12 +22,12 @@ namespace Acknex3.Api
         private Thing m_genius;
         private Var m_ambient;
         private Var m_clip_dist;
-        private Func<IEnumerator> m_if_enter;
-        private Func<IEnumerator> m_if_leave;
-        private Func<IEnumerator> m_if_dive;
-        private Func<IEnumerator> m_if_arise;
-        private Func<IEnumerator> m_each_cycle;
-        private Func<IEnumerator> m_each_tick;
+        private Function m_if_enter;
+        private Function m_if_leave;
+        private Function m_if_dive;
+        private Function m_if_arise;
+        private Function m_each_cycle;
+        private Function m_each_tick;
 
         public Region() : base() { }
 
@@ -46,28 +46,28 @@ namespace Acknex3.Api
         public Thing Genius { get => m_genius; set => m_genius = value; } //M
         public Var Ambient { get => m_ambient; set => m_ambient = value; } //M
         public Var Clip_dist { get => m_clip_dist; set => m_clip_dist = value; }
-        public Func<IEnumerator> If_enter { get => m_if_enter; set => m_if_enter = value; } //M
-        public Func<IEnumerator> If_leave { get => m_if_leave; set => m_if_leave = value; } //M
-        public Func<IEnumerator> If_dive { get => m_if_dive; set => m_if_dive = value; } //M
-        public Func<IEnumerator> If_arise { get => m_if_arise; set => m_if_arise = value; } //M
-        public Func<IEnumerator> Each_cycle { get => m_each_cycle; set => m_each_cycle = value; } //M
-        public Func<IEnumerator> Each_tick { get => m_each_tick; set => m_each_tick = value; } //M
+        public Function If_enter { get => m_if_enter; set => m_if_enter = value.Create(this); } //M
+        public Function If_leave { get => m_if_leave; set => m_if_leave = value.Create(this); } //M
+        public Function If_dive { get => m_if_dive; set => m_if_dive = value.Create(this); } //M
+        public Function If_arise { get => m_if_arise; set => m_if_arise = value.Create(this); } //M
+        public Function Each_cycle { get => m_each_cycle; set => m_each_cycle = value.Create(this); } //M
+        public Function Each_tick { get => m_each_tick; set => m_each_tick = value.Create(this); } //M
 
-        public int Floor_ascend { get => IsSet(A3Flags.Floor_ascend); set => m_flags = (value != 0) ? Set(A3Flags.Floor_ascend) : Reset(A3Flags.Floor_ascend); }
-        public int Ceil_ascend { get => IsSet(A3Flags.Ceil_ascend); set => m_flags = (value != 0) ? Set(A3Flags.Ceil_ascend) : Reset(A3Flags.Ceil_ascend); }
-        public int Floor_descend { get => IsSet(A3Flags.Floor_descend); set => m_flags = (value != 0) ? Set(A3Flags.Floor_descend) : Reset(A3Flags.Floor_descend); }
-        public int Ceil_descend { get => IsSet(A3Flags.Ceil_descend); set => m_flags = (value != 0) ? Set(A3Flags.Ceil_descend) : Reset(A3Flags.Ceil_descend); }
-        public int Ceil_lifted { get => IsSet(A3Flags.Ceil_lifted); set => m_flags = (value != 0) ? Set(A3Flags.Ceil_lifted) : Reset(A3Flags.Ceil_lifted); }
-        public int Floor_lifted { get => IsSet(A3Flags.Floor_lifted); set => m_flags = (value != 0) ? Set(A3Flags.Floor_lifted) : Reset(A3Flags.Floor_lifted); }
-        public int Lifted { get => IsSet(A3Flags.Lifted); set => m_flags = (value != 0) ? Set(A3Flags.Lifted) : Reset(A3Flags.Lifted); }
-        public int Visible { get => IsSet(A3Flags.Visible); set => m_flags = (value != 0) ? Set(A3Flags.Visible) : Reset(A3Flags.Visible); } //R
-        public int Seen { get => IsSet(A3Flags.Seen); set => m_flags = (value != 0) ? Set(A3Flags.Seen) : Reset(A3Flags.Seen); } //M
-        public int Save { get => IsSet(A3Flags.Save); set => m_flags = (value != 0) ? Set(A3Flags.Save) : Reset(A3Flags.Save); }
-        public int Save_all { get => IsSet(A3Flags.Save_all); set => m_flags = (value != 0) ? Set(A3Flags.Save_all) : Reset(A3Flags.Save_all); }
-        public int Here { get => IsSet(A3Flags.Here); set => m_flags = (value != 0) ? Set(A3Flags.Here) : Reset(A3Flags.Here); } //R
-        public int Base { get => IsSet(A3Flags.Base); set => m_flags = (value != 0) ? Set(A3Flags.Base) : Reset(A3Flags.Base); } //M
-        public int Sticky { get => IsSet(A3Flags.Sticky); set => m_flags = (value != 0) ? Set(A3Flags.Sticky) : Reset(A3Flags.Sticky); }
-        public int Play { get => IsSet(A3Flags.Play); set => m_flags = (value != 0) ? Set(A3Flags.Play) : Reset(A3Flags.Play); } //M
+        public int? Floor_ascend { get => IsSet(A3Flags.Floor_ascend); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Floor_ascend) : Reset(A3Flags.Floor_ascend); }
+        public int? Ceil_ascend { get => IsSet(A3Flags.Ceil_ascend); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Ceil_ascend) : Reset(A3Flags.Ceil_ascend); }
+        public int? Floor_descend { get => IsSet(A3Flags.Floor_descend); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Floor_descend) : Reset(A3Flags.Floor_descend); }
+        public int? Ceil_descend { get => IsSet(A3Flags.Ceil_descend); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Ceil_descend) : Reset(A3Flags.Ceil_descend); }
+        public int? Ceil_lifted { get => IsSet(A3Flags.Ceil_lifted); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Ceil_lifted) : Reset(A3Flags.Ceil_lifted); }
+        public int? Floor_lifted { get => IsSet(A3Flags.Floor_lifted); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Floor_lifted) : Reset(A3Flags.Floor_lifted); }
+        public int? Lifted { get => IsSet(A3Flags.Lifted); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Lifted) : Reset(A3Flags.Lifted); }
+        public int? Visible { get => IsSet(A3Flags.Visible); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Visible) : Reset(A3Flags.Visible); } //R
+        public int? Seen { get => IsSet(A3Flags.Seen); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Seen) : Reset(A3Flags.Seen); } //M
+        public int? Save { get => IsSet(A3Flags.Save); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Save) : Reset(A3Flags.Save); }
+        public int? Save_all { get => IsSet(A3Flags.Save_all); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Save_all) : Reset(A3Flags.Save_all); }
+        public int? Here { get => IsSet(A3Flags.Here); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Here) : Reset(A3Flags.Here); } //R
+        public int? Base { get => IsSet(A3Flags.Base); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Base) : Reset(A3Flags.Base); } //M
+        public int? Sticky { get => IsSet(A3Flags.Sticky); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Sticky) : Reset(A3Flags.Sticky); }
+        public int? Play { get => IsSet(A3Flags.Play); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Play) : Reset(A3Flags.Play); } //M
 
         public void Lift(Var dz)
         {

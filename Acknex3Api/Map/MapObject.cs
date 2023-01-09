@@ -99,9 +99,9 @@ namespace Acknex3.Api
             }
         }
 
-        public void Get (out T obj)
+        public T Get ()
         {
-            obj = (T)this;
+            return (T)this;
         }
 
         public T Next()

@@ -35,9 +35,9 @@ namespace Acknex3.Api
         private Var m_pos_y;
         private string m_touch;
         private Font m_font;
-        private Func<IEnumerator> m_if_touch;
-        private Func<IEnumerator> m_if_release;
-        private Func<IEnumerator> m_if_klick;
+        private Function m_if_touch;
+        private Function m_if_release;
+        private Function m_if_klick;
 
         public Texture() : base() {}
 
@@ -68,24 +68,24 @@ namespace Acknex3.Api
         public Var Pos_y { get => m_pos_y; set => m_pos_y = value; } //M
         public string Touch { get => m_touch; set => m_touch = value; } //M
         public Font Font { get => m_font; set => m_font = value; }
-        public Func<IEnumerator> If_touch { get => m_if_touch; set => m_if_touch = value; } //M
-        public Func<IEnumerator> If_release { get => m_if_release; set => m_if_release = value; } //M
-        public Func<IEnumerator> If_klick { get => m_if_klick; set => m_if_klick = value; } //M
+        public Function If_touch { get => m_if_touch; set => m_if_touch = value.Create(this); } //M
+        public Function If_release { get => m_if_release; set => m_if_release = value.Create(this); } //M
+        public Function If_klick { get => m_if_klick; set => m_if_klick = value.Create(this); } //M
 
-        public int Oneshot { get => IsSet(A3Flags.Oneshot); set => m_flags = (value != 0) ? Set(A3Flags.Oneshot) : Reset(A3Flags.Oneshot); }
-        public int Ghost { get => IsSet(A3Flags.Ghost); set => m_flags = (value != 0) ? Set(A3Flags.Ghost) : Reset(A3Flags.Ghost); }
-        public int Diaphanous { get => IsSet(A3Flags.Diaphanous); set => m_flags = (value != 0) ? Set(A3Flags.Diaphanous) : Reset(A3Flags.Diaphanous); }
-        public int Behind { get => IsSet(A3Flags.Behind); set => m_flags = (value != 0) ? Set(A3Flags.Behind) : Reset(A3Flags.Behind); }
-        public int Shadow { get => IsSet(A3Flags.Shadow); set => m_flags = (value != 0) ? Set(A3Flags.Shadow) : Reset(A3Flags.Shadow); }
-        public int Lightmap { get => IsSet(A3Flags.Lightmap); set => m_flags = (value != 0) ? Set(A3Flags.Lightmap) : Reset(A3Flags.Lightmap); }
-        public int Sky { get => IsSet(A3Flags.Sky); set => m_flags = (value != 0) ? Set(A3Flags.Sky) : Reset(A3Flags.Sky); }
-        public int Wire { get => IsSet(A3Flags.Wire); set => m_flags = (value != 0) ? Set(A3Flags.Wire) : Reset(A3Flags.Wire); }
-        public int Cluster { get => IsSet(A3Flags.Cluster); set => m_flags = (value != 0) ? Set(A3Flags.Cluster) : Reset(A3Flags.Cluster); }
-        public int No_clip { get => IsSet(A3Flags.No_clip); set => m_flags = (value != 0) ? Set(A3Flags.No_clip) : Reset(A3Flags.No_clip); }
-        public int Clip { get => IsSet(A3Flags.Clip); set => m_flags = (value != 0) ? Set(A3Flags.Clip) : Reset(A3Flags.Clip); }
-        public int Sloop { get => IsSet(A3Flags.Sloop); set => m_flags = (value != 0) ? Set(A3Flags.Sloop) : Reset(A3Flags.Sloop); }
-        public int Condensed { get => IsSet(A3Flags.Condensed); set => m_flags = (value != 0) ? Set(A3Flags.Condensed) : Reset(A3Flags.Condensed); }
-        public int Narrow { get => IsSet(A3Flags.Narrow); set => m_flags = (value != 0) ? Set(A3Flags.Narrow) : Reset(A3Flags.Narrow); }
-        public int Save { get => IsSet(A3Flags.Save); set => m_flags = (value != 0) ? Set(A3Flags.Save) : Reset(A3Flags.Save); }
+        public int? Oneshot { get => IsSet(A3Flags.Oneshot); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Oneshot) : Reset(A3Flags.Oneshot); }
+        public int? Ghost { get => IsSet(A3Flags.Ghost); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Ghost) : Reset(A3Flags.Ghost); }
+        public int? Diaphanous { get => IsSet(A3Flags.Diaphanous); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Diaphanous) : Reset(A3Flags.Diaphanous); }
+        public int? Behind { get => IsSet(A3Flags.Behind); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Behind) : Reset(A3Flags.Behind); }
+        public int? Shadow { get => IsSet(A3Flags.Shadow); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Shadow) : Reset(A3Flags.Shadow); }
+        public int? Lightmap { get => IsSet(A3Flags.Lightmap); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Lightmap) : Reset(A3Flags.Lightmap); }
+        public int? Sky { get => IsSet(A3Flags.Sky); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Sky) : Reset(A3Flags.Sky); }
+        public int? Wire { get => IsSet(A3Flags.Wire); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Wire) : Reset(A3Flags.Wire); }
+        public int? Cluster { get => IsSet(A3Flags.Cluster); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Cluster) : Reset(A3Flags.Cluster); }
+        public int? No_clip { get => IsSet(A3Flags.No_clip); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.No_clip) : Reset(A3Flags.No_clip); }
+        public int? Clip { get => IsSet(A3Flags.Clip); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Clip) : Reset(A3Flags.Clip); }
+        public int? Sloop { get => IsSet(A3Flags.Sloop); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Sloop) : Reset(A3Flags.Sloop); }
+        public int? Condensed { get => IsSet(A3Flags.Condensed); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Condensed) : Reset(A3Flags.Condensed); }
+        public int? Narrow { get => IsSet(A3Flags.Narrow); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Narrow) : Reset(A3Flags.Narrow); }
+        public int? Save { get => IsSet(A3Flags.Save); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Save) : Reset(A3Flags.Save); }
     }
 }

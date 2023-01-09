@@ -58,6 +58,11 @@ namespace Acknex3.Api
 
         }
 
+        public static void Map()
+        {
+
+        }
+
         public static void Level(string file)
         {
             //how to handle wrs parameter?

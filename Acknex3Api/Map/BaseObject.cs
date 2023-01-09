@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Acknex3.Api
 {
-    public abstract class BaseObject<T> : MapObject<T>, ILevelObject where T : MapObject<T>
+    public class BaseObject : MapObject<BaseObject>
     {
         protected Texture m_texture;
         protected Texture m_attach;
@@ -20,15 +20,35 @@ namespace Acknex3.Api
         protected Var m_size_y; //R
         protected Var m_floor_hgt; //R
         protected Var m_result; //R
-        protected Var m_x;
-        protected Var m_y;
-        protected Var m_z;
-        protected Region m_region; //M
-        protected Func<IEnumerator> m_if_near; //M
-        protected Func<IEnumerator> m_if_far; //M
-        protected Func<IEnumerator> m_if_hit; //M
-        protected Func<IEnumerator> m_each_cycle; //M
-        protected Func<IEnumerator> m_each_tick; //M
+        protected Var m_x1;
+        protected Var m_y1;
+        protected Var m_z1;
+        protected Var m_x2;
+        protected Var m_y2;
+        protected Var m_z2;
+        protected ActorTarget m_target;
+        protected Way m_targetWay;
+        protected BaseObject m_targetObject;
+        protected Var m_waypoint; //M
+        protected Var m_target_x; //M
+        protected Var m_target_y; //M
+        protected Var m_rel_angle; //M
+        protected Var m_rel_dist; //M
+        protected Var m_speed; //M
+        protected Var m_vspeed; //M
+        protected Var m_aspeed;
+        protected Var m_offset_x;
+        protected Var m_offset_y;
+        protected Var m_position;
+        protected Var m_length;
+        protected Region m_left; //M
+        protected Region m_right;
+        protected Function m_if_near; //M
+        protected Function m_if_far; //M
+        protected Function m_if_hit; //M
+        protected Function m_each_cycle; //M
+        protected Function m_each_tick; //M
+        protected Function m_if_arrived; //M
 
         public BaseObject() : base() { }
 
@@ -36,39 +56,83 @@ namespace Acknex3.Api
         public Texture Attach { get => m_attach; set => m_attach = value; }
         public Var Cycle { get => m_cycle; set => m_cycle = value; }
         public Overlay Overlay { get => m_overlay; set => m_overlay = value; }
-        public Var Height { get => m_height; set => m_height = value; }
-        public Var Angle { get => m_angle; set => m_angle = value; }
         public Var Map_color { get => m_map_color; set => m_map_color = value; }
         public Var Dist { get => m_dist; set => m_dist = value; }
         public Var Distance { get => m_distance; set => m_distance = value; }
         public Var Size_x { get => m_size_x; set => m_size_x = value; }
+        public Function If_near { get => m_if_near; set => m_if_near = value.Create(this); }
+        public Function If_far { get => m_if_far; set => m_if_far = value.Create(this); }
+        public Function If_hit { get => m_if_hit; set => m_if_hit = value.Create(this); }
+        public Function Each_cycle { get => m_each_cycle; set => m_each_cycle = value.Create(this); }
+        public Function Each_tick { get => m_each_tick; set => m_each_tick = value.Create(this); }
+
+        //Wall
+        public Var X1 { get => m_x1; set => m_x1 = value; }
+        public Var Y1 { get => m_y1; set => m_y1 = value; }
+        public Var Z1 { get => m_z1; set => m_z1 = value; }
+        public Var X2 { get => m_x2; set => m_x2 = value; }
+        public Var Y2 { get => m_y2; set => m_y2 = value; }
+        public Var Z2 { get => m_z2; set => m_z2 = value; }
+        public Var Offset_x { get => m_offset_x; set => m_offset_x = value; } //M
+        public Var Offset_y { get => m_offset_y; set => m_offset_y = value; } //M
+        public Var Position { get => m_position; set => m_position = value; } //M
+        public Var Length { get => m_length; set => m_length = value; } //R
+        public Region Left { get => m_left; set => m_left = value; } //R
+        public Region Right { get => m_right; set => m_right = value; } //R
+
+        //Thing, Actor
+        public Var X { get => m_x1; set => m_x1 = value; }
+        public Var Y { get => m_y1; set => m_y1 = value; }
+        public Var Z { get => m_z1; set => m_z1 = value; }
+        public Region Region { get => m_left; set => m_left = value; }
+        public Var Height { get => m_height; set => m_height = value; }
+        public Var Angle { get => m_angle; set => m_angle = value; }
         public Var Size_y { get => m_size_y; set => m_size_y = value; }
         public Var Floor_hgt { get => m_floor_hgt; set => m_floor_hgt = value; }
         public Var Result { get => m_result; set => m_result = value; }
-        public Var X { get => m_x; set => m_x = value; }
-        public Var Y { get => m_y; set => m_y = value; }
-        public Var Z { get => m_z; set => m_z = value; }
-        public Region Region { get => m_region; set => m_region = value; }
-        public Func<IEnumerator> If_near { get => m_if_near; set => m_if_near = value; }
-        public Func<IEnumerator> If_far { get => m_if_far; set => m_if_far = value; }
-        public Func<IEnumerator> If_hit { get => m_if_hit; set => m_if_hit = value; }
-        public Func<IEnumerator> Each_cycle { get => m_each_cycle; set => m_each_cycle = value; }
-        public Func<IEnumerator> Each_tick { get => m_each_tick; set => m_each_tick = value; }
 
-        public int Invisible { get => IsSet(A3Flags.Invisible); set => m_flags = (value != 0) ? Set(A3Flags.Invisible) : Reset(A3Flags.Invisible); } //M
-        public int Passable { get => IsSet(A3Flags.Passable); set => m_flags = (value != 0) ? Set(A3Flags.Passable) : Reset(A3Flags.Passable); } //M
-        public int Impassable { get => IsSet(A3Flags.Impassable); set => m_flags = (value != 0) ? Set(A3Flags.Impassable) : Reset(A3Flags.Impassable); } //M
-        public int Visible { get => IsSet(A3Flags.Visible); set => m_flags = (value != 0) ? Set(A3Flags.Visible) : Reset(A3Flags.Visible); } //R
-        public int Berkeley { get => IsSet(A3Flags.Berkeley); set => m_flags = (value != 0) ? Set(A3Flags.Berkeley) : Reset(A3Flags.Berkeley); } //M
-        public int Liber { get => IsSet(A3Flags.Liber); set => m_flags = (value != 0) ? Set(A3Flags.Liber) : Reset(A3Flags.Liber); } //M
-        public int Ground { get => IsSet(A3Flags.Ground); set => m_flags = (value != 0) ? Set(A3Flags.Ground) : Reset(A3Flags.Ground); } //M
-        public int Candelaber { get => IsSet(A3Flags.Candelaber); set => m_flags = (value != 0) ? Set(A3Flags.Candelaber) : Reset(A3Flags.Candelaber); } //M
-        public int Seen { get => IsSet(A3Flags.Seen); set => m_flags = (value != 0) ? Set(A3Flags.Seen) : Reset(A3Flags.Seen); } //M
-        public int Play { get => IsSet(A3Flags.Play); set => m_flags = (value != 0) ? Set(A3Flags.Play) : Reset(A3Flags.Play); } //M
-        public int Immaterial { get => IsSet(A3Flags.Immaterial); set => m_flags = (value != 0) ? Set(A3Flags.Immaterial) : Reset(A3Flags.Immaterial); } //M
-        public int Flat { get => IsSet(A3Flags.Flat); set => m_flags = (value != 0) ? Set(A3Flags.Flat) : Reset(A3Flags.Flat); } //M
-        public int Fragile { get => IsSet(A3Flags.Fragile); set => m_flags = (value != 0) ? Set(A3Flags.Fragile) : Reset(A3Flags.Fragile); } //M
-        public int Save { get => IsSet(A3Flags.Save); set => m_flags = (value != 0) ? Set(A3Flags.Save) : Reset(A3Flags.Save); } //M
+        //Actor
+        public ActorTarget Target { get => m_target; set => m_target = value; }
+        public Way TargetWay { get => m_targetWay; set => m_targetWay = value; }
+        public BaseObject TargetObject { get => m_targetObject; set => m_targetObject = value; }
+        public Var Waypoint { get => m_waypoint; set => m_waypoint = value; }
+        public Var Target_x { get => m_target_x; set => m_target_x = value; }
+        public Var Target_y { get => m_target_y; set => m_target_y = value; }
+        public Var Rel_angle { get => m_rel_angle; set => m_rel_angle = value; }
+        public Var Rel_dist { get => m_rel_dist; set => m_rel_dist = value; }
+        public Var Speed { get => m_speed; set => m_speed = value; }
+        public Var Vspeed { get => m_vspeed; set => m_vspeed = value; }
+        public Var Aspeed { get => m_aspeed; set => m_aspeed = value; }
+        public Function If_arrived { get => m_if_arrived; set => m_if_arrived = value.Create(this); }
+
+        public int? Invisible { get => IsSet(A3Flags.Invisible); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Invisible) : Reset(A3Flags.Invisible); } //M
+        public int? Passable { get => IsSet(A3Flags.Passable); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Passable) : Reset(A3Flags.Passable); } //M
+        public int? Impassable { get => IsSet(A3Flags.Impassable); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Impassable) : Reset(A3Flags.Impassable); } //M
+        public int? Visible { get => IsSet(A3Flags.Visible); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Visible) : Reset(A3Flags.Visible); } //R
+        public int? Berkeley { get => IsSet(A3Flags.Berkeley); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Berkeley) : Reset(A3Flags.Berkeley); } //M
+        public int? Seen { get => IsSet(A3Flags.Seen); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Seen) : Reset(A3Flags.Seen); } //M
+        public int? Play { get => IsSet(A3Flags.Play); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Play) : Reset(A3Flags.Play); } //M
+        public int? Immaterial { get => IsSet(A3Flags.Immaterial); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Immaterial) : Reset(A3Flags.Immaterial); } //M
+        public int? Fragile { get => IsSet(A3Flags.Fragile); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Fragile) : Reset(A3Flags.Fragile); } //M
+        public int? Save { get => IsSet(A3Flags.Save); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Save) : Reset(A3Flags.Save); } //M
+        public int? Sensitive { get => IsSet(A3Flags.Sensitive); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Sensitive) : Reset(A3Flags.Sensitive); } //M
+
+        //Thing, Actor
+        public int? Liber { get => IsSet(A3Flags.Liber); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Liber) : Reset(A3Flags.Liber); } //M
+        public int? Ground { get => IsSet(A3Flags.Ground); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Ground) : Reset(A3Flags.Ground); } //M
+        public int? Candelaber { get => IsSet(A3Flags.Candelaber); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Candelaber) : Reset(A3Flags.Candelaber); } //M
+        public int? Flat { get => IsSet(A3Flags.Flat); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Flat) : Reset(A3Flags.Flat); } //M
+
+        //Actor
+        public int? Moved { get => IsSet(A3Flags.Moved); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Moved) : Reset(A3Flags.Moved); } //M
+        public int? Carefully { get => IsSet(A3Flags.Carefully); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Carefully) : Reset(A3Flags.Carefully); } //M
+
+        //Wall
+        public int? Transparent { get => IsSet(A3Flags.Transparent); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Transparent) : Reset(A3Flags.Transparent); } //M
+        public int? Curtain { get => IsSet(A3Flags.Curtain); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Curtain) : Reset(A3Flags.Curtain); }
+        public int? Portcullis { get => IsSet(A3Flags.Portcullis); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Portcullis) : Reset(A3Flags.Portcullis); } //M
+        public int? Fence { get => IsSet(A3Flags.Fence); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Fence) : Reset(A3Flags.Fence); }
+        public int? Far { get => IsSet(A3Flags.Far); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Far) : Reset(A3Flags.Far); }
 
         public void Locate()
         {
@@ -105,18 +169,19 @@ namespace Acknex3.Api
             //am I shot?
         }
 
-        public new ILevelObject Next()
+        //TODO: rewrite these iterators for new BaseObject arrangement
+        public new BaseObject Next()
         {
-            return (ILevelObject)base.Next();
+            return base.Next();
         }
 
-        public ILevelObject Next_there()
+        public BaseObject Next_there()
         {
-            //TODO: this is for objects of same name only. NEeds to be implemented for objects of ANY name (new global lookup list required)
-            BaseObject<T> obj = null;
+            //TODO: this is for objects of same name only. Needs to be implemented for objects of ANY name (new global lookup list required)
+            BaseObject obj = null;
             do
             {
-                obj = base.Next() as BaseObject<T>;
+                obj = base.Next() as BaseObject;
             } while (obj.Region != Region);
             return obj;
         }
