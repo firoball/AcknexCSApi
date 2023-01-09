@@ -92,9 +92,38 @@ namespace Acknex3.Api
         public Var Result { get => m_result; set => m_result = value; }
 
         //Actor
-        public ActorTarget Target { get => m_target; set => m_target = value; }
-        public Way TargetWay { get => m_targetWay; set => m_targetWay = value; }
-        public BaseObject TargetObject { get => m_targetObject; set => m_targetObject = value; }
+        public object Target {
+            set
+            {
+                if (value is Way)
+                {
+                    m_targetObject = null;
+                    m_targetWay = (Way)value;
+                    m_target = ActorTarget.Way;
+                }
+                else if (value is BaseObject)
+                {
+                    m_targetObject = (BaseObject)value;
+                    m_targetWay = null;
+                    m_target = ActorTarget.Object;
+                }
+                if (value is ActorTarget)
+                {
+                    m_targetObject = null;
+                    m_targetWay = null;
+                    m_target = (ActorTarget)value;
+                }
+                else
+                {
+                    m_targetObject = null;
+                    m_targetWay = null;
+                    m_target = ActorTarget.Null;
+                }
+            }
+            }
+        //public ActorTarget Target { get => m_target; set => m_target = value; }
+        //public Way TargetWay { get => m_targetWay; set => m_targetWay = value; }
+        //public BaseObject TargetObject { get => m_targetObject; set => m_targetObject = value; }
         public Var Waypoint { get => m_waypoint; set => m_waypoint = value; }
         public Var Target_x { get => m_target_x; set => m_target_x = value; }
         public Var Target_y { get => m_target_y; set => m_target_y = value; }

@@ -27,7 +27,7 @@ namespace Acknex3.Api
         Node2,
         Way,
         Hold,
-        LevelObject
+        Object
     }
 
 }

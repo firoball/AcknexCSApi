@@ -7,7 +7,7 @@ namespace Acknex3.Api
 {
     public class A3Object
     {
-        protected int m_flags;
+        protected int m_flags = 0;
 
         public A3Flags Flags { set => m_flags = (int)value; }
 

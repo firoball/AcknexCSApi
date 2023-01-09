@@ -56,6 +56,7 @@ namespace Acknex3.Api
         public static Skill Force_tilt = new Skill();
         public static Skill Force_up = new Skill();
         public static Skill Friction = new Skill();
+        public static Skill Half_pi = new Skill(); //undocumented
         public static Skill Hit_dist = new Skill();
         public static Skill Hit_mindist = new Skill();
         public static Skill Hit_x = new Skill();
@@ -123,6 +124,7 @@ namespace Acknex3.Api
         public static Skill Key_i = new Skill();
         public static Skill Key_ins = new Skill();
         public static Skill Key_j = new Skill();
+        public static Skill Key_joy4 = new Skill(); //undocumented
         public static Skill Key_k = new Skill();
         public static Skill Key_l = new Skill();
         public static Skill Key_m = new Skill();
@@ -191,6 +193,7 @@ namespace Acknex3.Api
         public static Skill Node = new Skill();
         public static Skill Palanim_delay = new Skill();
         public static Skill Panel_layer = new Skill();
+        public static Skill Pi = new Skill(); //undocumented
         public static Skill Player_angle = new Skill();
         public static Skill Player_arc = new Skill();
         public static Skill Player_climb = new Skill();
