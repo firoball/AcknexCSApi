@@ -55,6 +55,16 @@ namespace Acknex3.Api
         public Var Random { get => m_random; set => m_random = value; }
         public Var Scale_x { get => m_scale_x; set => m_scale_x = value; } //M
         public Var Scale_y { get => m_scale_y; set => m_scale_y = value; } //M
+        public Var[] Scale_xy
+        {
+            set {
+                if (value.Length >= 2)
+                {
+                    m_scale_x = value[0];
+                    m_scale_y = value[1];
+                }
+            }
+        } //M
         public Var Ambient { get => m_ambient; set => m_ambient = value; } //M
         public Var Albedo { get => m_albedo; set => m_albedo = value; } //M
         public Var Radiance { get => m_radiance; set => m_radiance = value; }
