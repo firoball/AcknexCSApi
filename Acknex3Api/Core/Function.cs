@@ -78,5 +78,10 @@ namespace Acknex3.Api
             yield break;
         }
 
+        protected void Run(Function function)
+        {
+
+        }
+
     }
 }
