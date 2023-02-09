@@ -30,6 +30,7 @@ namespace Acknex3.Api
         private Var m_sdist;
         private Var m_svdist;
         private int[] m_scycles;
+        private int m_scycle; //undocumented
         private Texture m_attach;
         private Var m_pos_x;
         private Var m_pos_y;
@@ -73,6 +74,7 @@ namespace Acknex3.Api
         public Var Sdist { get => m_sdist; set => m_sdist = value; } //M
         public Var Svdist { get => m_svdist; set => m_svdist = value; } //M
         public int[] Scycles { get => m_scycles; set => m_scycles = value; }
+        public int Scycle { get => m_scycle; set => m_scycle = value; }
         public Texture Attach { get => m_attach; set => m_attach = value; } //M
         public Var Pos_x { get => m_pos_x; set => m_pos_x = value; } //M
         public Var Pos_y { get => m_pos_y; set => m_pos_y = value; } //M

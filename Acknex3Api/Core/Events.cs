@@ -64,6 +64,7 @@ namespace Acknex3.Api
         public static Function If_i;
         public static Function If_ins;
         public static Function If_j;
+        public static Function If_joy4;
         public static Function If_k;
         public static Function If_klick;
         public static Function If_l;

@@ -145,6 +145,8 @@ namespace Acknex3.Api
         public int? Fragile { get => IsSet(A3Flags.Fragile); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Fragile) : Reset(A3Flags.Fragile); } //M
         public int? Save { get => IsSet(A3Flags.Save); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Save) : Reset(A3Flags.Save); } //M
         public int? Sensitive { get => IsSet(A3Flags.Sensitive); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Sensitive) : Reset(A3Flags.Sensitive); } //M
+        public int? Thing { get => IsSet(A3Flags.Thing); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Thing) : Reset(A3Flags.Thing); } //M
+        public int? Actor { get => IsSet(A3Flags.Actor); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Actor) : Reset(A3Flags.Actor); } //M
 
         //Thing, Actor
         public int? Liber { get => IsSet(A3Flags.Liber); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Liber) : Reset(A3Flags.Liber); } //M

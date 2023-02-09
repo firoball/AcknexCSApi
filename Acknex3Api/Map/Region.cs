@@ -9,6 +9,10 @@ namespace Acknex3.Api
     {
         private Texture m_floor_tex;
         private Texture m_ceil_tex;
+        private Texture m_texture1; //undocumented
+        private Texture m_texture2; //undocumented
+        private Texture m_texture3; //undocumented
+        private Texture m_texture4; //undocumented
         private Var m_floor_hgt;
         private Var m_ceil_hgt;
         private Var m_floor_offs_x;
@@ -28,11 +32,16 @@ namespace Acknex3.Api
         private Function m_if_arise;
         private Function m_each_cycle;
         private Function m_each_tick;
+        private Function m_do; //undocumented
 
         public Region() : base() { }
 
         public Texture Floor_tex { get => m_floor_tex; set => m_floor_tex = value; } //M
         public Texture Ceil_tex { get => m_ceil_tex; set => m_ceil_tex = value; } //M
+        public Texture Texture1 { get => m_texture1; set => m_texture1 = value; } //M
+        public Texture Texture2 { get => m_texture2; set => m_texture2 = value; } //M
+        public Texture Texture3 { get => m_texture3; set => m_texture3 = value; } //M
+        public Texture Texture4 { get => m_texture4; set => m_texture4 = value; } //M
         public Var Floor_hgt { get => m_floor_hgt; set => m_floor_hgt = value; } //M
         public Var Ceil_hgt { get => m_ceil_hgt; set => m_ceil_hgt = value; } //M
         public Var Floor_offs_x { get => m_floor_offs_x; set => m_floor_offs_x = value; } //M
@@ -52,6 +61,7 @@ namespace Acknex3.Api
         public Function If_arise { get => m_if_arise; set => m_if_arise = value.Create(this); } //M
         public Function Each_cycle { get => m_each_cycle; set => m_each_cycle = value.Create(this); } //M
         public Function Each_tick { get => m_each_tick; set => m_each_tick = value.Create(this); } //M
+        public Function Do { get => m_do; set => m_do = value.Create(this); } //M
 
         public int? Floor_ascend { get => IsSet(A3Flags.Floor_ascend); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Floor_ascend) : Reset(A3Flags.Floor_ascend); }
         public int? Ceil_ascend { get => IsSet(A3Flags.Ceil_ascend); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Ceil_ascend) : Reset(A3Flags.Ceil_ascend); }

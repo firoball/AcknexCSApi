@@ -50,11 +50,13 @@ namespace Acknex3.Api
         public static Skill Error = new Skill();
         public static Skill Flic_frame = new Skill();
         public static Skill Floor_hgt = new Skill();
+        public static Skill Floor_mode = new Skill(); //undocumented
         public static Skill Force_ahead = new Skill();
         public static Skill Force_rot = new Skill();
         public static Skill Force_strafe = new Skill();
         public static Skill Force_tilt = new Skill();
         public static Skill Force_up = new Skill();
+        public static Skill Frame_color = new Skill(); //undocumented
         public static Skill Friction = new Skill();
         public static Skill Half_pi = new Skill(); //undocumented
         public static Skill Hit_dist = new Skill();
@@ -203,6 +205,7 @@ namespace Acknex3.Api
         public static Skill Player_last_x = new Skill();
         public static Skill Player_last_y = new Skill();
         public static Skill Player_light = new Skill();
+        public static Skill Player_msin = new Skill(); //undocumented
         public static Skill Player_sin = new Skill();
         public static Skill Player_size = new Skill();
         public static Skill Player_speed = new Skill();
@@ -218,6 +221,7 @@ namespace Acknex3.Api
         public static Skill Psound_tone = new Skill();
         public static Skill Psound_vol = new Skill();
         public static Skill Random = new Skill();
+        public static Skill Real_speed = new Skill(); //undocumented
         public static Skill Remote_0 = new Skill();
         public static Skill Remote_1 = new Skill();
         public static Skill Render_mode = new Skill();
