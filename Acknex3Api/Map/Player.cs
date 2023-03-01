@@ -25,5 +25,9 @@ namespace Acknex3.Api
             //shoot nearest obj in line of sight of player
         }
 
+        public static new void Locate()
+        {
+            //update Globals.Here to actual region of player
+        }
     }
 }

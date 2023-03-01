@@ -120,7 +120,22 @@ namespace Acknex3.Api
                     m_target = ActorTarget.Null;
                 }
             }
+            get
+            {
+                if (m_targetWay != null)
+                {
+                    return m_targetWay;
+                }
+                else if (m_targetObject != null)
+                {
+                    return m_targetObject;
+                }
+                else
+                {
+                    return m_target;
+                }
             }
+        }
         //public ActorTarget Target { get => m_target; set => m_target = value; }
         //public Way TargetWay { get => m_targetWay; set => m_targetWay = value; }
         //public BaseObject TargetObject { get => m_targetObject; set => m_targetObject = value; }

@@ -92,6 +92,7 @@ namespace Acknex3.Api
         public static Function If_start;
         public static Function If_sz;
         public static Function If_t;
+        public static Function If_tast;
         public static Function If_tab;
         public static Function If_u;
         public static Function If_v;
