@@ -196,6 +196,7 @@ namespace Acknex3.Api
         public static implicit operator Var(int a) => new Var(a);
         public static implicit operator Var(float a) => new Var(a);
         public static implicit operator Var(double a) => new Var(a);
+        public static implicit operator Var(A3Object a) => new Var(0); //hack: enable Var to accept "null" as value and treat it as 0
 
         public static Var operator -(Var a) => new Var(-a.m_value);
 

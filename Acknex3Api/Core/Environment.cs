@@ -78,5 +78,10 @@ namespace Acknex3.Api
 
         }
 
+        public static void Scan(string file)
+        {
+            //reload WDL file during runtime - will probably never be supported
+        }
+
     }
 }

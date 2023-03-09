@@ -19,12 +19,13 @@ namespace Acknex3.Api
         Null = 0,
         Move,
         Bullet,
+        Drop, //undocumented, same as "drop" command?
         Stick,
         Follow,
         Repel,
         Vertex,
+        Node0,
         Node1,
-        Node2,
         Way,
         Hold,
         Object

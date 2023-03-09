@@ -68,6 +68,7 @@ namespace Acknex3.Api
         public static Skill Impact_vy = new Skill();
         public static Skill Impact_vz = new Skill();
         public static Skill Inertia = new Skill();
+        public static Skill Inv_dist = new Skill(); //listed in Gamestudio book
         public static Skill Joystick_x = new Skill();
         public static Skill Joystick_y = new Skill();
         public static Skill Joy_4 = new Skill();
@@ -170,8 +171,8 @@ namespace Acknex3.Api
         public static Skill Map_minx = new Skill();
         public static Skill Map_miny = new Skill();
         public static Skill Map_mode = new Skill();
-        public static Skill Map_offs_x = new Skill();
-        public static Skill Map_offs_y = new Skill();
+        public static Skill Map_offsx = new Skill();
+        public static Skill Map_offsy = new Skill();
         public static Skill Map_rot = new Skill();
         public static Skill Map_scale = new Skill();
         public static Skill Max_dist = new Skill();
@@ -192,6 +193,14 @@ namespace Acknex3.Api
         public static Skill Move_angle = new Skill();
         public static Skill Move_mode = new Skill();
         public static Skill Music_vol = new Skill();
+        public static Skill My_x = new Skill(); //listed in Gamestudio book
+        public static Skill My_y = new Skill(); //listed in Gamestudio book
+        public static Skill My_x1 = new Skill(); //listed in Gamestudio book
+        public static Skill My_y1 = new Skill(); //listed in Gamestudio book
+        public static Skill My_z1 = new Skill(); //listed in Gamestudio book
+        public static Skill My_x2 = new Skill(); //listed in Gamestudio book
+        public static Skill My_y2 = new Skill(); //listed in Gamestudio book
+        public static Skill My_z2 = new Skill(); //listed in Gamestudio book
         public static Skill Node = new Skill();
         public static Skill Palanim_delay = new Skill();
         public static Skill Panel_layer = new Skill();

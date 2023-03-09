@@ -41,6 +41,7 @@ namespace Acknex3.Api
         protected Var m_offset_y;
         protected Var m_position;
         protected Var m_length;
+        protected Var m_ambient; //undocumented
         protected Region m_left; //M
         protected Region m_right;
         protected Function m_if_near; //M
@@ -90,6 +91,7 @@ namespace Acknex3.Api
         public Var Size_y { get => m_size_y; set => m_size_y = value; }
         public Var Floor_hgt { get => m_floor_hgt; set => m_floor_hgt = value; }
         public Var Result { get => m_result; set => m_result = value; }
+        public Var Ambient { get => m_ambient; set => m_ambient = value; }
 
         //Actor
         public object Target {

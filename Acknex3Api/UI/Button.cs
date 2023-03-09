@@ -9,10 +9,10 @@ namespace Acknex3.Api
     {
         private readonly Bmap m_bmap_on;
         private readonly Bmap m_bmap_off;
-        private readonly Action m_action_on;
-        private readonly Action m_action_off;
+        private readonly Function m_action_on;
+        private readonly Function m_action_off;
 
-        public Button(Var x, Var y, Bmap bmap_on, Bmap bmap_off, Action action_on, Action action_off) : base(x, y)
+        public Button(Var x, Var y, Bmap bmap_on, Bmap bmap_off, Function action_on, Function action_off) : base(x, y)
         {
             m_bmap_on = bmap_on;
             m_bmap_off = bmap_off;
