@@ -60,6 +60,7 @@ namespace Acknex3.Api
         public Function If_dive { get => m_if_dive; set => m_if_dive = value.Create(this); } //M
         public Function If_arise { get => m_if_arise; set => m_if_arise = value.Create(this); } //M
         public Function Each_cycle { get => m_each_cycle; set => m_each_cycle = value.Create(this); } //M
+        public Function Each_cycle_c { get => m_each_cycle; set => m_each_cycle = value.Create(this); } //M undocumented, probably exclusive to ceil texture animation
         public Function Each_tick { get => m_each_tick; set => m_each_tick = value.Create(this); } //M
         public Function Do { get => m_do; set => m_do = value.Create(this); } //M
 

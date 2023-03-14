@@ -38,6 +38,7 @@ namespace Acknex3.Api
         public static Skill Channel_5 = new Skill();
         public static Skill Channel_6 = new Skill();
         public static Skill Channel_7 = new Skill();
+        public static Skill Clipped = new Skill(); //undocumented
         public static Skill Clipping = new Skill();
         public static Skill Color_actors = new Skill();
         public static Skill Color_border = new Skill();
@@ -178,6 +179,7 @@ namespace Acknex3.Api
         public static Skill Max_dist = new Skill();
         public static Skill Mickey_x = new Skill();
         public static Skill Mickey_y = new Skill();
+        public static Skill Minv_dist = new Skill(); //undoumented
         public static Skill Motion_blur = new Skill();
         public static Skill Mouse_angle = new Skill();
         public static Skill Mouse_calm = new Skill();

@@ -9,7 +9,7 @@ namespace Acknex3.Api
     {
         protected int m_flags = 0;
 
-        public A3Flags Flags { set => m_flags = (int)value; }
+        public A3Flags Flags { get => (A3Flags)m_flags; set => m_flags = (int)value; }
 
         protected int IsSet(A3Flags flag)
         {

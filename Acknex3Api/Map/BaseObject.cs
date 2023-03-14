@@ -87,6 +87,7 @@ namespace Acknex3.Api
         public Var Z { get => m_z1; set => m_z1 = value; }
         public Region Region { get => m_left; set => m_left = value; }
         public Var Height { get => m_height; set => m_height = value; }
+        public Var Thing_hgt { get => m_height; set => m_height = value; } //undocumented
         public Var Angle { get => m_angle; set => m_angle = value; }
         public Var Size_y { get => m_size_y; set => m_size_y = value; }
         public Var Floor_hgt { get => m_floor_hgt; set => m_floor_hgt = value; }
