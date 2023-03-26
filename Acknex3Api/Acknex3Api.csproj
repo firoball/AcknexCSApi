@@ -62,8 +62,8 @@
     <Compile Include="Core\Scheduler.cs" />
     <Compile Include="Core\Skills.cs" />
     <Compile Include="Map\Player.cs" />
-    <Compile Include="Test2.cs" />
-    <Compile Include="Test\Test.cs" />
+    <Compile Include="Test\Demo3.cs" />
+    <Compile Include="Test\vrdemo.cs" />
     <Compile Include="UI\Bar.cs" />
     <Compile Include="UI\Button.cs" />
     <Compile Include="UI\Digits.cs" />
@@ -94,6 +94,7 @@
     <Compile Include="UI\Vslider.cs" />
     <Compile Include="Map\Wall.cs" />
     <Compile Include="UI\Window.cs" />
+    <Compile Include="Test\Test.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

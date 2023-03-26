@@ -21,6 +21,7 @@ namespace Acknex3.Api
         Bullet,
         Drop, //undocumented, same as "drop" command?
         Stick,
+        Straight, //undocumented, same as target "move"?
         Follow,
         Repel,
         Vertex,

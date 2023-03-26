@@ -23,7 +23,7 @@ namespace Acknex3.Api
         private Var m_ceil_angle;
         private Region m_below;
         private Region m_top;
-        private Thing m_genius;
+        private BaseObject m_genius;
         private Var m_ambient;
         private Var m_clip_dist;
         private Function m_if_enter;
@@ -52,7 +52,7 @@ namespace Acknex3.Api
         public Var Ceil_angle { get => m_ceil_angle; set => m_ceil_angle = value; } //M
         public Region Below { get => m_below; set => m_below = value; } //R
         public Region Top { get => m_top; set => m_top = value; } //R
-        public Thing Genius { get => m_genius; set => m_genius = value; } //M
+        public BaseObject Genius { get => m_genius; set => m_genius = value; } //M
         public Var Ambient { get => m_ambient; set => m_ambient = value; } //M
         public Var Clip_dist { get => m_clip_dist; set => m_clip_dist = value; }
         public Function If_enter { get => m_if_enter; set => m_if_enter = value.Create(this); } //M

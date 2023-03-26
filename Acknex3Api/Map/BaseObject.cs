@@ -27,7 +27,7 @@ namespace Acknex3.Api
         protected Var m_y2;
         protected Var m_z2;
         protected ActorTarget m_target;
-        protected Way m_targetWay;
+        protected Way m_way;
         protected BaseObject m_targetObject;
         protected Var m_waypoint; //M
         protected Var m_target_x; //M
@@ -42,6 +42,7 @@ namespace Acknex3.Api
         protected Var m_position;
         protected Var m_length;
         protected Var m_ambient; //undocumented
+        protected Var m_node; //undocumented
         protected Region m_left; //M
         protected Region m_right;
         protected Function m_if_near; //M
@@ -101,33 +102,33 @@ namespace Acknex3.Api
                 if (value is Way)
                 {
                     m_targetObject = null;
-                    m_targetWay = (Way)value;
+                    m_way = (Way)value;
                     m_target = ActorTarget.Way;
                 }
                 else if (value is BaseObject)
                 {
                     m_targetObject = (BaseObject)value;
-                    m_targetWay = null;
+                    m_way = null;
                     m_target = ActorTarget.Object;
                 }
                 if (value is ActorTarget)
                 {
                     m_targetObject = null;
-                    m_targetWay = null;
+                    m_way = null;
                     m_target = (ActorTarget)value;
                 }
                 else
                 {
                     m_targetObject = null;
-                    m_targetWay = null;
+                    m_way = null;
                     m_target = ActorTarget.Null;
                 }
             }
             get
             {
-                if (m_targetWay != null)
+                if (m_way != null)
                 {
-                    return m_targetWay;
+                    return m_way;
                 }
                 else if (m_targetObject != null)
                 {
@@ -140,7 +141,7 @@ namespace Acknex3.Api
             }
         }
         //public ActorTarget Target { get => m_target; set => m_target = value; }
-        //public Way TargetWay { get => m_targetWay; set => m_targetWay = value; }
+        public Way Way { get => m_way; set => m_way = value; } //undocumented
         //public BaseObject TargetObject { get => m_targetObject; set => m_targetObject = value; }
         public Var Waypoint { get => m_waypoint; set => m_waypoint = value; }
         public Var Target_x { get => m_target_x; set => m_target_x = value; }
@@ -150,6 +151,7 @@ namespace Acknex3.Api
         public Var Speed { get => m_speed; set => m_speed = value; }
         public Var Vspeed { get => m_vspeed; set => m_vspeed = value; }
         public Var Aspeed { get => m_aspeed; set => m_aspeed = value; }
+        public Var Node { get => m_node; set => m_node = value; } //TODO: map to target
         public Function If_arrived { get => m_if_arrived; set => m_if_arrived = value.Create(this); }
 
         public int? Invisible { get => IsSet(A3Flags.Invisible); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Invisible) : Reset(A3Flags.Invisible); } //M

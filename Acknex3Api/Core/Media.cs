@@ -17,6 +17,11 @@ namespace Acknex3.Api
 
         }
 
+        public static void Play_sound(string file, Var volume)
+        {
+
+        }
+
         public static void Play_sound(string file, Var volume, Var balance)
         {
 
