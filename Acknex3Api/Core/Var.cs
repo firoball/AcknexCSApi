@@ -17,6 +17,12 @@ namespace Acknex3.Api
         public Var(double a) { m_value = _VAR2(a); }
         public Var(long a) { m_value = a; }
 
+        public void Accel(Var value)
+        {
+            //TODO: add acceleration formula: from A4 manual?
+        }
+
+
         //public long getvalue() { return value; }
 
         /*

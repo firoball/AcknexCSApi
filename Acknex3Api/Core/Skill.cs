@@ -88,7 +88,7 @@ namespace Acknex3.Api
 
         public void Accel(Var value)
         {
-            //TODO: add acceleration formula: from A4 manual?
+            m_val.Accel(value);
         }
 
         public void Randomize(Var value)
