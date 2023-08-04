@@ -31,6 +31,30 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugDLL|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputType>Library</OutputType>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\DebugDLL\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseDLL|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputType>Library</OutputType>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\ReleaseDLL\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -62,8 +86,19 @@
     <Compile Include="Core\Scheduler.cs" />
     <Compile Include="Core\Skills.cs" />
     <Compile Include="Map\Player.cs" />
+    <Compile Include="Test\angst.cs" />
+    <Compile Include="Test\bruder.cs" />
     <Compile Include="Test\Demo3.cs" />
+    <Compile Include="Test\florian.cs" />
+    <Compile Include="Test\nfreeze.cs" />
+    <Compile Include="Test\pibb.cs" />
+    <Compile Include="Test\street.cs" />
+    <Compile Include="Test\temple.cs" />
+    <Compile Include="Test\tyran.cs" />
+    <Compile Include="Test\vi.cs" />
+    <Compile Include="Test\vi2.cs" />
     <Compile Include="Test\vrdemo.cs" />
+    <Compile Include="Test\vvl.cs" />
     <Compile Include="UI\Bar.cs" />
     <Compile Include="UI\Button.cs" />
     <Compile Include="UI\Digits.cs" />

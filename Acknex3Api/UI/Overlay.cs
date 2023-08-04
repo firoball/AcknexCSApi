@@ -16,6 +16,8 @@ namespace Acknex3.Api
         private int[] m_offset_y;
         private Var m_size_x; //R
         private Var m_size_y; //R
+        private Var m_scale_x; //undocumented - always 1?
+        private Var m_scale_y; //undocumented - always 1?
 
         public Overlay() : base() { }
 
@@ -28,6 +30,19 @@ namespace Acknex3.Api
         public int[] Offset_y { get => m_offset_y; set => m_offset_y = value; }
         public Var Size_x { get => m_size_x; set => m_size_x = value; }
         public Var Size_y { get => m_size_y; set => m_size_y = value; }
+        public Var Scale_x { get => m_scale_x; set => m_scale_x = value; } //undocumented - always 1?
+        public Var Scale_y { get => m_scale_y; set => m_scale_y = value; } //undocumented - always 1?
+        public Var[] Scale_xy
+        {
+            set
+            {
+                if (value.Length >= 2)
+                {
+                    m_scale_x = value[0];
+                    m_scale_y = value[1];
+                }
+            }
+        } //undocumented
 
         public int Abspos { get => IsSet(A3Flags.Abspos); set => m_flags = (value != 0) ? Set(A3Flags.Abspos) : Reset(A3Flags.Abspos); }
     }
