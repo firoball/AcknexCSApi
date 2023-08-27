@@ -275,6 +275,7 @@ namespace Acknex3.Api
         public static Skill Time_vertices = new Skill(); //undocumented
         public static Skill Touch_dist = new Skill();
         public static Skill Touch_mode = new Skill();
+        public static Skill Touch_range = new Skill(); //undoumented
         public static Skill Touch_state = new Skill();
         public static Skill Two_pi = new Skill(); //undocumented
         public static Skill Walk = new Skill();

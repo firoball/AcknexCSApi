@@ -66,6 +66,10 @@ namespace Acknex3.Api
                 }
             }
         } //M
+        public Var Scale
+        {
+            set { m_scale_x = value; m_scale_y = value; }
+        } //M - undocumented
         public Var Ambient { get => m_ambient; set => m_ambient = value; } //M
         public Var Albedo { get => m_albedo; set => m_albedo = value; } //M
         public Var Radiance { get => m_radiance; set => m_radiance = value; }
