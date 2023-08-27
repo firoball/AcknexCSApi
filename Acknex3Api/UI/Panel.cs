@@ -23,9 +23,9 @@ namespace Acknex3.Api
         public Overlay Msprite { get => m_msprite; set => m_msprite = value; }
         public Function If_klick { get => m_if_klick; set => m_if_klick = value; }
 
-        public int Transparent { get => IsSet(A3Flags.Transparent); set => m_flags = (value != 0) ? Set(A3Flags.Transparent) : Reset(A3Flags.Transparent); }
-        public int Refresh { get => IsSet(A3Flags.Refresh); set => m_flags = (value != 0) ? Set(A3Flags.Refresh) : Reset(A3Flags.Refresh); }
-        public int Relpos { get => IsSet(A3Flags.Relpos); set => m_flags = (value != 0) ? Set(A3Flags.Relpos) : Reset(A3Flags.Relpos); }
+        public Var Transparent { get => IsSet(A3Flags.Transparent); set => m_flags = (value != 0) ? Set(A3Flags.Transparent) : Reset(A3Flags.Transparent); }
+        public Var Refresh { get => IsSet(A3Flags.Refresh); set => m_flags = (value != 0) ? Set(A3Flags.Refresh) : Reset(A3Flags.Refresh); }
+        public Var Relpos { get => IsSet(A3Flags.Relpos); set => m_flags = (value != 0) ? Set(A3Flags.Relpos) : Reset(A3Flags.Relpos); }
 
     }
 }

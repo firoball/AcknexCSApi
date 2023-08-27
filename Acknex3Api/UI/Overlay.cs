@@ -44,6 +44,6 @@ namespace Acknex3.Api
             }
         } //undocumented
 
-        public int Abspos { get => IsSet(A3Flags.Abspos); set => m_flags = (value != 0) ? Set(A3Flags.Abspos) : Reset(A3Flags.Abspos); }
+        public Var Abspos { get => IsSet(A3Flags.Abspos); set => m_flags = (value != 0) ? Set(A3Flags.Abspos) : Reset(A3Flags.Abspos); }
     }
 }

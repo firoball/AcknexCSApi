@@ -36,14 +36,14 @@ namespace Acknex3.Api
         public Skill Skill7 { get => m_skill[6]; set => m_skill[6] = value; } //M
         public Skill Skill8 { get => m_skill[7]; set => m_skill[7] = value; } //M
 
-        public int Flag1 { get => IsSet(A3Flags.Flag1); set => m_flags = (value != 0) ? Set(A3Flags.Flag1) : Reset(A3Flags.Flag1); } //M
-        public int Flag2 { get => IsSet(A3Flags.Flag2); set => m_flags = (value != 0) ? Set(A3Flags.Flag2) : Reset(A3Flags.Flag2); } //M
-        public int Flag3 { get => IsSet(A3Flags.Flag3); set => m_flags = (value != 0) ? Set(A3Flags.Flag3) : Reset(A3Flags.Flag3); } //M
-        public int Flag4 { get => IsSet(A3Flags.Flag4); set => m_flags = (value != 0) ? Set(A3Flags.Flag4) : Reset(A3Flags.Flag4); } //M
-        public int Flag5 { get => IsSet(A3Flags.Flag5); set => m_flags = (value != 0) ? Set(A3Flags.Flag5) : Reset(A3Flags.Flag5); } //M
-        public int Flag6 { get => IsSet(A3Flags.Flag6); set => m_flags = (value != 0) ? Set(A3Flags.Flag6) : Reset(A3Flags.Flag6); } //M
-        public int Flag7 { get => IsSet(A3Flags.Flag7); set => m_flags = (value != 0) ? Set(A3Flags.Flag7) : Reset(A3Flags.Flag7); } //M
-        public int Flag8 { get => IsSet(A3Flags.Flag8); set => m_flags = (value != 0) ? Set(A3Flags.Flag8) : Reset(A3Flags.Flag8); } //M
+        public Var Flag1 { get => IsSet(A3Flags.Flag1); set => m_flags = (value != 0) ? Set(A3Flags.Flag1) : Reset(A3Flags.Flag1); } //M
+        public Var Flag2 { get => IsSet(A3Flags.Flag2); set => m_flags = (value != 0) ? Set(A3Flags.Flag2) : Reset(A3Flags.Flag2); } //M
+        public Var Flag3 { get => IsSet(A3Flags.Flag3); set => m_flags = (value != 0) ? Set(A3Flags.Flag3) : Reset(A3Flags.Flag3); } //M
+        public Var Flag4 { get => IsSet(A3Flags.Flag4); set => m_flags = (value != 0) ? Set(A3Flags.Flag4) : Reset(A3Flags.Flag4); } //M
+        public Var Flag5 { get => IsSet(A3Flags.Flag5); set => m_flags = (value != 0) ? Set(A3Flags.Flag5) : Reset(A3Flags.Flag5); } //M
+        public Var Flag6 { get => IsSet(A3Flags.Flag6); set => m_flags = (value != 0) ? Set(A3Flags.Flag6) : Reset(A3Flags.Flag6); } //M
+        public Var Flag7 { get => IsSet(A3Flags.Flag7); set => m_flags = (value != 0) ? Set(A3Flags.Flag7) : Reset(A3Flags.Flag7); } //M
+        public Var Flag8 { get => IsSet(A3Flags.Flag8); set => m_flags = (value != 0) ? Set(A3Flags.Flag8) : Reset(A3Flags.Flag8); } //M
 
         public T this[int i]
         {

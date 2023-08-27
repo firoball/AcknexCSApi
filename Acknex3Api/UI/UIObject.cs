@@ -16,6 +16,7 @@ namespace Acknex3.Api
         public Var Pos_y { get => m_pos_y; set => m_pos_y = value; }
         public int Layer { get => layer; set => layer = value; }
 
-        public int? Visible { get => IsSet(A3Flags.Visible); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Visible) : Reset(A3Flags.Visible); } //M
+//        public int? Visible { get => IsSet(A3Flags.Visible); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Visible) : Reset(A3Flags.Visible); } //M
+        public Var Visible { get => IsSet(A3Flags.Visible); set => m_flags = (value != 0) ? Set(A3Flags.Visible) : Reset(A3Flags.Visible); } //M
     }
 }

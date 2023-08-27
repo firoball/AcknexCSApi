@@ -86,19 +86,6 @@
     <Compile Include="Core\Scheduler.cs" />
     <Compile Include="Core\Skills.cs" />
     <Compile Include="Map\Player.cs" />
-    <Compile Include="Test\angst.cs" />
-    <Compile Include="Test\bruder.cs" />
-    <Compile Include="Test\Demo3.cs" />
-    <Compile Include="Test\florian.cs" />
-    <Compile Include="Test\nfreeze.cs" />
-    <Compile Include="Test\pibb.cs" />
-    <Compile Include="Test\street.cs" />
-    <Compile Include="Test\temple.cs" />
-    <Compile Include="Test\tyran.cs" />
-    <Compile Include="Test\vi.cs" />
-    <Compile Include="Test\vi2.cs" />
-    <Compile Include="Test\vrdemo.cs" />
-    <Compile Include="Test\vvl.cs" />
     <Compile Include="UI\Bar.cs" />
     <Compile Include="UI\Button.cs" />
     <Compile Include="UI\Digits.cs" />
@@ -129,7 +116,6 @@
     <Compile Include="UI\Vslider.cs" />
     <Compile Include="Map\Wall.cs" />
     <Compile Include="UI\Window.cs" />
-    <Compile Include="Test\Test.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
