@@ -22,6 +22,11 @@ namespace Acknex3.Api
             return value;
         }
 
+        public static Var Atan(Var value)
+        {
+            return value;
+        }
+
         public static Var Cos(Var value)
         {
             return value;

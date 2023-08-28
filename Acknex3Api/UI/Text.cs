@@ -37,10 +37,10 @@ namespace Acknex3.Api
         public Var Condensed { get => IsSet(A3Flags.Condensed); set => m_flags = (value != 0) ? Set(A3Flags.Condensed) : Reset(A3Flags.Condensed); }
         public Var Narrow { get => IsSet(A3Flags.Narrow); set => m_flags = (value != 0) ? Set(A3Flags.Narrow) : Reset(A3Flags.Narrow); }
 
-        public Var Find(string str)
+        public void Find(string str)
         {
             //handle setting of Result-Skill here or at caller level?
-            return -1;
+            //set Globals.Result
         }
 
     }

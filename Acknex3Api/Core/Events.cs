@@ -20,6 +20,7 @@ namespace Acknex3.Api
         public static Function If_8;
         public static Function If_9;
         public static Function If_a;
+        public static Function If_ae; //undocumented
         public static Function If_alt;
         public static Function If_anykey;
         public static Function If_apo;
@@ -64,7 +65,7 @@ namespace Acknex3.Api
         public static Function If_i;
         public static Function If_ins;
         public static Function If_j;
-        public static Function If_joy4;
+        public static Function If_joy4; //undocumented
         public static Function If_k;
         public static Function If_klick;
         public static Function If_l;
@@ -76,6 +77,7 @@ namespace Acknex3.Api
         public static Function If_mstop;
         public static Function If_n;
         public static Function If_o;
+        public static Function If_oe; //undocumented
         public static Function If_p;
         public static Function If_pause;
         public static Function If_period;
@@ -95,6 +97,7 @@ namespace Acknex3.Api
         public static Function If_tast;
         public static Function If_tab;
         public static Function If_u;
+        public static Function If_ue; //undocumented
         public static Function If_v;
         public static Function If_w;
         public static Function If_x;

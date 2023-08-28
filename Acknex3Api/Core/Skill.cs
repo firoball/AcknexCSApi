@@ -93,6 +93,7 @@ namespace Acknex3.Api
 
         public void Randomize(Var value)
         {
+            m_val.Randomize(value);
         }
     }
 

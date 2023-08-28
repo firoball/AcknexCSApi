@@ -49,6 +49,14 @@ namespace Acknex3.Api
         public static Skill Debug_mode = new Skill();
         public static Skill Delta_angle = new Skill();
         public static Skill Error = new Skill();
+        public static Skill Flag1 = new Skill(); //undocumented
+        public static Skill Flag2 = new Skill(); //undocumented
+        public static Skill Flag3 = new Skill(); //undocumented
+        public static Skill Flag4 = new Skill(); //undocumented
+        public static Skill Flag5 = new Skill(); //undocumented
+        public static Skill Flag6 = new Skill(); //undocumented
+        public static Skill Flag7 = new Skill(); //undocumented
+        public static Skill Flag8 = new Skill(); //undocumented
         public static Skill Flic_frame = new Skill();
         public static Skill Floor_hgt = new Skill();
         public static Skill Floor_mode = new Skill(); //undocumented
@@ -85,6 +93,7 @@ namespace Acknex3.Api
         public static Skill Key_8 = new Skill();
         public static Skill Key_9 = new Skill();
         public static Skill Key_a = new Skill();
+        public static Skill Key_ae = new Skill(); //undocumented
         public static Skill Key_alt = new Skill();
         public static Skill Key_any = new Skill();
         public static Skill Key_apo = new Skill();
@@ -135,6 +144,7 @@ namespace Acknex3.Api
         public static Skill Key_minus = new Skill();
         public static Skill Key_n = new Skill();
         public static Skill Key_o = new Skill();
+        public static Skill Key_oe = new Skill(); //undocumented
         public static Skill Key_p = new Skill();
         public static Skill Key_pause = new Skill();
         public static Skill Key_period = new Skill();
@@ -153,6 +163,7 @@ namespace Acknex3.Api
         public static Skill Key_t = new Skill();
         public static Skill Key_tab = new Skill();
         public static Skill Key_u = new Skill();
+        public static Skill Key_ue = new Skill(); //undocumented
         public static Skill Key_v = new Skill();
         public static Skill Key_w = new Skill();
         public static Skill Key_x = new Skill();

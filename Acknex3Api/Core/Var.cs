@@ -22,6 +22,11 @@ namespace Acknex3.Api
             //TODO: add acceleration formula: from A4 manual?
         }
 
+        public void Randomize(Var value)
+        {
+            //TODO: add randomizer
+        }
+
 
         //public long getvalue() { return value; }
 

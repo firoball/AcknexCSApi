@@ -26,6 +26,7 @@ namespace Acknex3.Api
             return m_flags & ~(int)flag;
         }
 
+        public static implicit operator bool(A3Object a) => a != null;
 
     }
 }

@@ -21,6 +21,7 @@ namespace Acknex3.Api
         private Var m_ceil_offs_y;
         private Var m_floor_angle;
         private Var m_ceil_angle;
+        private Var m_foot_hgt; //undocumented
         private Region m_below;
         private Region m_top;
         private BaseObject m_genius;
@@ -50,6 +51,7 @@ namespace Acknex3.Api
         public Var Ceil_offs_y { get => m_ceil_offs_y; set => m_ceil_offs_y = value; } //M
         public Var Floor_angle { get => m_floor_angle; set => m_floor_angle = value; } //M
         public Var Ceil_angle { get => m_ceil_angle; set => m_ceil_angle = value; } //M
+        public Var Foot_hgt { get => m_foot_hgt; set => m_foot_hgt = value; } //M
         public Region Below { get => m_below; set => m_below = value; } //R
         public Region Top { get => m_top; set => m_top = value; } //R
         public BaseObject Genius { get => m_genius; set => m_genius = value; } //M
