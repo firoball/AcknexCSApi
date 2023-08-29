@@ -22,6 +22,7 @@ namespace Acknex3.Api
         public static Skill Actor_impact_vz = new Skill();
         public static Skill Actor_width = new Skill();
         public static Skill Ambient = new Skill();
+        public static Skill Append_mode = new Skill(); //undocumented
         public static Skill Aspect = new Skill();
         public static Skill Blur_mode = new Skill();
         public static Skill Bounce_vx = new Skill();
