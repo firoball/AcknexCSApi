@@ -67,6 +67,7 @@ namespace Acknex3.Api
         No_clip = Condensed,
         Clip = Narrow,
         Sloop = Impassable,
+        Floor = Visible, //undocumented
 
         /* Palette */
         Hard = Floor_ascend,
@@ -90,5 +91,6 @@ namespace Acknex3.Api
         /* Text */
         Center_x = Floor_ascend,
         Center_y = Ceil_ascend,
+        Center = Center_x | Center_y, //undocumented
     }
 }

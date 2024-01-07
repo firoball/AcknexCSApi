@@ -92,12 +92,14 @@ namespace Acknex3.Api
             //TimeSpan ts = new TimeSpan(10000);
         }
 
-
         static Skill b;
 
+        static Skill erster = new Skill { Val = 12 };
+        static Skill zweiter = new Skill { Val = erster.Val };
 
         static void Main(string[] args)
         {
+            Exec(MyFunc());
             Exec(MyFunc());
             Exec2(MyFunc2());
             //bool ok = false;
@@ -108,7 +110,6 @@ namespace Acknex3.Api
             //Debug.WriteLine(ok.ToString());
             //MyFunc().MoveNext();
             //} while (!ok);
-
 #if bla
             Bmap ba = null, bb = null, bc = null;
 #else

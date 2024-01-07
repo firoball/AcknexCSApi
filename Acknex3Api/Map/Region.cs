@@ -32,6 +32,8 @@ namespace Acknex3.Api
         private Function m_if_dive;
         private Function m_if_arise;
         private Function m_each_cycle;
+        private Function m_each_cycle_c; //undocumented, probably exclusive to ceil texture animation
+        private Function m_each_cycle_f; //undocumented, probably exclusive to floor texture animation
         private Function m_each_tick;
         private Function m_do; //undocumented
 
@@ -62,7 +64,8 @@ namespace Acknex3.Api
         public Function If_dive { get => m_if_dive; set => m_if_dive = value.Create(this); } //M
         public Function If_arise { get => m_if_arise; set => m_if_arise = value.Create(this); } //M
         public Function Each_cycle { get => m_each_cycle; set => m_each_cycle = value.Create(this); } //M
-        public Function Each_cycle_c { get => m_each_cycle; set => m_each_cycle = value.Create(this); } //M undocumented, probably exclusive to ceil texture animation
+        public Function Each_cycle_c { get => m_each_cycle_c; set => m_each_cycle_c = value.Create(this); } //M
+        public Function Each_cycle_f { get => m_each_cycle_f; set => m_each_cycle_f = value.Create(this); } //M
         public Function Each_tick { get => m_each_tick; set => m_each_tick = value.Create(this); } //M
         public Function Do { get => m_do; set => m_do = value.Create(this); } //M
 

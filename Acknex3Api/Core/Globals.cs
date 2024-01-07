@@ -39,6 +39,14 @@ namespace Acknex3.Api
         public static Region Touch_reg;
         public static string Command_line;
         public static Overlay Msprite;
+        public static Region Region1; //undocumented
+        public static Region Region2; //undocumented
+        public static Region Region3; //undocumented
+        public static Region Region4; //undocumented
+        public static Region Region5; //undocumented
+        public static Region Region6; //undocumented
+        public static Region Region7; //undocumented
+        public static Region Region8; //undocumented
 
         /* Player object */
         public static Actor Player;

@@ -29,7 +29,8 @@ namespace Acknex3.Api
         Node1,
         Way,
         Hold,
-        Object
+        Place, //undocumented, same as "drop" command?
+        Object,
     }
 
 }
