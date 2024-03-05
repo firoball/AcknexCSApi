@@ -7,8 +7,5 @@ using System.Text;
 namespace Acknex3.Api
 {
 
-    public class Way { }
-
-
 
 }

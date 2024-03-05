@@ -86,6 +86,7 @@
     <Compile Include="Core\Scheduler.cs" />
     <Compile Include="Core\Skills.cs" />
     <Compile Include="Map\Player.cs" />
+    <Compile Include="Map\Way.cs" />
     <Compile Include="UI\Bar.cs" />
     <Compile Include="UI\Button.cs" />
     <Compile Include="UI\Digits.cs" />

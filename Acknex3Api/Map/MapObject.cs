@@ -15,7 +15,7 @@ namespace Acknex3.Api
 
         protected Skill[] m_skill = new Skill[8];
 
-        public MapObject() : base()
+        public MapObject(string name) : base(name)
         {
             m_skill = new Skill[8];
             for (int i = 0; i < m_skill.Length; i++)

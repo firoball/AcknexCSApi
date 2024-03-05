@@ -13,7 +13,7 @@ namespace Acknex3.Api
         private int[,,,] m_anicolor;
         private Var m_cycle;
 
-        public Palette() : base() { }
+        public Palette(string name) : base(name) { }
 
         public string Palfile { get => m_palfile; set => m_palfile = value; }
         public string Anifile { get => m_anifile; set => m_anifile = value; }

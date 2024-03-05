@@ -12,13 +12,13 @@ namespace Acknex3.Api
         protected Var m_dx;
         protected Var m_dy;
 
-        public Bitmap(string file) : base(file)
+        public Bitmap(string name, string file) : base(name, file)
         {
             m_x = 0;
             m_y = 0;
             //TODO: DX = bitmap size, DY = bitmap height
         }
-        public Bitmap(string file, Var x, Var y, Var dx, Var dy) : base(file)
+        public Bitmap(string name, string file, Var x, Var y, Var dx, Var dy) : base(name, file)
         {
             m_x = x;
             m_y = y;

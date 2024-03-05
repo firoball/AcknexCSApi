@@ -7,7 +7,7 @@ namespace Acknex3.Api
 {
     public class Thing : BaseObject
     {
-        public Thing() : base()
+        public Thing(string name) : base(name)
         {
             Set(A3Flags.Thing);
         }

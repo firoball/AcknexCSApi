@@ -7,6 +7,6 @@ namespace Acknex3.Api
 {
     public class Model : Asset
     {
-        public Model(string file) : base(file) { }
+        public Model(string name, string file) : base(name, file) { }
     }
 }

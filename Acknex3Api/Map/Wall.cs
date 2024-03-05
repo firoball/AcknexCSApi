@@ -7,6 +7,6 @@ namespace Acknex3.Api
 {
     public class Wall : BaseObject
     {
-
+        public Wall(string name) : base(name) { }
     }
 }

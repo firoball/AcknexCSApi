@@ -7,7 +7,7 @@ namespace Acknex3.Api
 {
     public class Bmap : Bitmap
     {
-        public Bmap(string file) : base(file) { }
-        public Bmap(string file, Var x, Var y, Var dx, Var dy) : base(file, x, y, dx, dy) { }
+        public Bmap(string name, string file) : base(name, file) { }
+        public Bmap(string name, string file, Var x, Var y, Var dx, Var dy) : base(name, file, x, y, dx, dy) { }
     }
 }

@@ -52,7 +52,7 @@ namespace Acknex3.Api
         protected Function m_each_tick; //M
         protected Function m_if_arrived; //M
 
-        public BaseObject() : base() { }
+        public BaseObject(string name) : base(name) { }
 
         public Texture Texture { get => m_texture; set => m_texture = value; }
         public Texture Attach { get => m_attach; set => m_attach = value; }
@@ -153,39 +153,6 @@ namespace Acknex3.Api
         public Var Aspeed { get => m_aspeed; set => m_aspeed = value; }
         public Var Node { get => m_node; set => m_node = value; } //TODO: map to target
         public Function If_arrived { get => m_if_arrived; set => m_if_arrived = value.Create(this); }
-
-        /*
-        public int? Invisible { get => IsSet(A3Flags.Invisible); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Invisible) : Reset(A3Flags.Invisible); } //M
-        public int? Passable { get => IsSet(A3Flags.Passable); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Passable) : Reset(A3Flags.Passable); } //M
-        public int? Impassable { get => IsSet(A3Flags.Impassable); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Impassable) : Reset(A3Flags.Impassable); } //M
-        public int? Visible { get => IsSet(A3Flags.Visible); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Visible) : Reset(A3Flags.Visible); } //R
-        public int? Berkeley { get => IsSet(A3Flags.Berkeley); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Berkeley) : Reset(A3Flags.Berkeley); } //M
-        public int? Seen { get => IsSet(A3Flags.Seen); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Seen) : Reset(A3Flags.Seen); } //M
-        public int? Play { get => IsSet(A3Flags.Play); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Play) : Reset(A3Flags.Play); } //M
-        public int? Immaterial { get => IsSet(A3Flags.Immaterial); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Immaterial) : Reset(A3Flags.Immaterial); } //M
-        public int? Fragile { get => IsSet(A3Flags.Fragile); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Fragile) : Reset(A3Flags.Fragile); } //M
-        public int? Save { get => IsSet(A3Flags.Save); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Save) : Reset(A3Flags.Save); } //M
-        public int? Sensitive { get => IsSet(A3Flags.Sensitive); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Sensitive) : Reset(A3Flags.Sensitive); } //M
-        public int? Thing { get => IsSet(A3Flags.Thing); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Thing) : Reset(A3Flags.Thing); } //M
-        public int? Actor { get => IsSet(A3Flags.Actor); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Actor) : Reset(A3Flags.Actor); } //M
-
-        //Thing, Actor
-        public int? Liber { get => IsSet(A3Flags.Liber); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Liber) : Reset(A3Flags.Liber); } //M
-        public int? Ground { get => IsSet(A3Flags.Ground); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Ground) : Reset(A3Flags.Ground); } //M
-        public int? Candelaber { get => IsSet(A3Flags.Candelaber); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Candelaber) : Reset(A3Flags.Candelaber); } //M
-        public int? Flat { get => IsSet(A3Flags.Flat); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Flat) : Reset(A3Flags.Flat); } //M
-
-        //Actor
-        public int? Moved { get => IsSet(A3Flags.Moved); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Moved) : Reset(A3Flags.Moved); } //M
-        public int? Carefully { get => IsSet(A3Flags.Carefully); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Carefully) : Reset(A3Flags.Carefully); } //M
-
-        //Wall
-        public int? Transparent { get => IsSet(A3Flags.Transparent); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Transparent) : Reset(A3Flags.Transparent); } //M
-        public int? Curtain { get => IsSet(A3Flags.Curtain); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Curtain) : Reset(A3Flags.Curtain); }
-        public int? Portcullis { get => IsSet(A3Flags.Portcullis); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Portcullis) : Reset(A3Flags.Portcullis); } //M
-        public int? Fence { get => IsSet(A3Flags.Fence); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Fence) : Reset(A3Flags.Fence); }
-        public int? Far { get => IsSet(A3Flags.Far); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Far) : Reset(A3Flags.Far); }
-        */
 
         public Var Invisible { get => IsSet(A3Flags.Invisible); set => m_flags = (value != 0) ? Set(A3Flags.Invisible) : Reset(A3Flags.Invisible); } //M
         public Var Passable { get => IsSet(A3Flags.Passable); set => m_flags = (value != 0) ? Set(A3Flags.Passable) : Reset(A3Flags.Passable); } //M

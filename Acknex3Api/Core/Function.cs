@@ -15,6 +15,7 @@ namespace Acknex3.Api
             {
                 T f = new T();
                 f.SetOwner(obj);
+                f.Name = Name;
                 return f;
             }
             //function does not require own instance
@@ -27,12 +28,14 @@ namespace Acknex3.Api
 
     public class Function
     {
+        private string m_name = string.Empty;
         private bool m_interruptable = false;
         private bool m_hasOwner = false;
         private A3Object m_owner = null;
         private BaseObject m_my = null;
         private Region m_there = null;
 
+        public string Name { get => m_name; set => m_name = value; }
         public bool Interruptable { get => m_interruptable; set => m_interruptable = value; }
         protected bool HasOwner { get => m_hasOwner; set => m_hasOwner = value; }
         protected BaseObject My { get => m_my; set => m_my = value; }

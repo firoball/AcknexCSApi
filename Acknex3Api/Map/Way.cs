@@ -5,8 +5,8 @@ using System.Text;
 
 namespace Acknex3.Api
 {
-    public class Flic : Asset
+    public class Way : MapObject<Way> //TODO: instancing really needed?
     {
-        public Flic(string name, string file) : base(name, file) { }
+        public Way(string name) : base(name) { }
     }
 }

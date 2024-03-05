@@ -7,7 +7,7 @@ namespace Acknex3.Api
 {
     public class Ovly : Bitmap
     {
-        public Ovly(string file) : base(file) { }
-        public Ovly(string file, Var x, Var y, Var dx, Var dy) : base(file, x, y, dx, dy) { }
+        public Ovly(string name, string file) : base(name, file) { }
+        public Ovly(string name, string file, Var x, Var y, Var dx, Var dy) : base(name, file, x, y, dx, dy) { }
     }
 }

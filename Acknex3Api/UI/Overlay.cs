@@ -19,7 +19,7 @@ namespace Acknex3.Api
         private Var m_scale_x; //undocumented - always 1?
         private Var m_scale_y; //undocumented - always 1?
 
-        public Overlay() : base() { }
+        public Overlay(string name) : base(name) { }
 
         public Var Cycles { get => m_cycles; set => m_cycles = value; }
         public Var Sides { get => m_sides; set => m_sides = value; }

@@ -7,7 +7,7 @@ namespace Acknex3.Api
 {
     public class Actor : BaseObject
     {
-        public Actor() : base()
+        public Actor(string name) : base(name)
         {
             Set(A3Flags.Actor);
         }

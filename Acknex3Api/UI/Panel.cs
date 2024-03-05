@@ -14,7 +14,7 @@ namespace Acknex3.Api
         private Overlay m_msprite;
         private Function m_if_klick; //M
 
-        public Panel() : base() { }
+        public Panel(string name) : base(name) { }
 
         public Bmap Pan_map { get => m_pan_map; set => m_pan_map = value; }
         public Bmap Target_map { get => m_target_map; set => m_target_map = value; }

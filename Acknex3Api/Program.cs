@@ -115,12 +115,12 @@ namespace Acknex3.Api
 #else
             Bmap ba = null, bb = null, bc = null;
 #endif
-            Texture tx = new Texture
+            Texture tx = new Texture("tx")
             {
                 Bmaps = new[] { ba, bb, bc }
             };
 
-            Region tex1 = new Region()
+            Region tex1 = new Region("tex1")
             {
                 Floor_hgt = 1,
             };
@@ -133,13 +133,13 @@ namespace Acknex3.Api
 
             goto bla;
             bla:
-            Palette pal1 = new Palette()
+            Palette pal1 = new Palette("pal1")
             {
                 Flags = A3Flags.Blur,
                 Palfile = "testpal.pcx",
                 Range = new[,] { { 16, 32 }, { 48, 32 }, { 80, 32 }, { 112, 32 }, { 144, 32 }, { 176, 32 }, { 208, 32 } },
             };
-            Region tex3 = new Region()
+            Region tex3 = new Region("tex3")
             {
                 Floor_hgt = 3
             };

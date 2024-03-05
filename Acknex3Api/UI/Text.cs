@@ -16,6 +16,8 @@ namespace Acknex3.Api
         private string[] m_string_array; //M
         private Var m_index; //M
 
+        public Text(string name) : base(name) { }
+
         public Var Size_y { get => m_size_y; set => m_size_y = value; }
         public Var Offset_y { get => m_offset_y; set => m_offset_y = value; }
         public Var Strings { get => m_strings; set => m_strings = value; }
@@ -26,12 +28,6 @@ namespace Acknex3.Api
         public string String { get => m_string_array[m_index-1]; set => m_string_array[m_index - 1] = value; }
         public Var Index { get => m_index; set => m_index = value; }
 
-        /*
-        public int? Center_x { get => IsSet(A3Flags.Center_x); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Center_x) : Reset(A3Flags.Center_x); }
-        public int? Center_y { get => IsSet(A3Flags.Center_y); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Center_y) : Reset(A3Flags.Center_y); }
-        public int? Condensed { get => IsSet(A3Flags.Condensed); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Condensed) : Reset(A3Flags.Condensed); }
-        public int? Narrow { get => IsSet(A3Flags.Narrow); set => m_flags = (value.HasValue && (value != 0)) ? Set(A3Flags.Narrow) : Reset(A3Flags.Narrow); }
-            */
         public Var Center_x { get => IsSet(A3Flags.Center_x); set => m_flags = (value != 0) ? Set(A3Flags.Center_x) : Reset(A3Flags.Center_x); }
         public Var Center_y { get => IsSet(A3Flags.Center_y); set => m_flags = (value != 0) ? Set(A3Flags.Center_y) : Reset(A3Flags.Center_y); }
         public Var Condensed { get => IsSet(A3Flags.Condensed); set => m_flags = (value != 0) ? Set(A3Flags.Condensed) : Reset(A3Flags.Condensed); }

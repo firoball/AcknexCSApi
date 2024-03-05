@@ -9,7 +9,7 @@ namespace Acknex3.Api
     {
         private static Player s_player = null;
 
-        public Player()
+        public Player() : base("player")
         {
             if (s_player == null)
                 s_player = this;

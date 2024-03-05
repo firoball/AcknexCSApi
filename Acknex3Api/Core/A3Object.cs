@@ -7,9 +7,16 @@ namespace Acknex3.Api
 {
     public class A3Object
     {
+        protected string m_name = string.Empty;
         protected int m_flags = 0;
 
         public A3Flags Flags { get => (A3Flags)m_flags; set => m_flags = (int)value; }
+
+        public A3Object(string name)
+        {
+            if (!string.IsNullOrEmpty(name))
+                m_name = name;
+        }
 
         protected int IsSet(A3Flags flag)
         {
