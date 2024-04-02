@@ -14,7 +14,8 @@ namespace Acknex3.Api
         {
             if (!string.IsNullOrEmpty(name))
                 m_name = name;
-            m_file = file;
+            if (!string.IsNullOrEmpty(name))
+                m_file = file;
         }
     }
 }

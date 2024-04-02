@@ -10,6 +10,8 @@ namespace Acknex3.Api
         private Var m_width;
         private Var m_height;
 
+        public Font(string name) : base(name, string.Empty) { }
+
         public Font(string name, string file, Var width, Var height) : base(name, file)
         {
             m_width = width;

@@ -7,6 +7,7 @@ namespace Acknex3.Api
 {
     public class Sound : Asset
     {
+        public Sound(string name) : base(name, string.Empty) { }
         public Sound(string name, string file) : base(name, file) { }
     }
 }
